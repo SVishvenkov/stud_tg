@@ -12,6 +12,10 @@ spring:
     enabled: true
     drop-first: false
 
+server:
+  port: 8080
+  address: 0.0.0.0
+
 mvc:
   static-path-pattern: /static/**
   web:

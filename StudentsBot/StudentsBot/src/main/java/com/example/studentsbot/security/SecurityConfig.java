@@ -19,7 +19,11 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
+                .csrf().disable()
+
                 .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/api/users/**").permitAll()
+                        .requestMatchers("/api/roles/**").permitAll() // Разрешаем эндпоинты ролей
                         .anyRequest().authenticated()  // Требует аутентификации для всех запросов
                 )
                 .formLogin(form -> form

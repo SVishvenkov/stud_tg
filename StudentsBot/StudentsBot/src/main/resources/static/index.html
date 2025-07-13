@@ -862,7 +862,7 @@ function renderUsers(users) {
     // Загрузка ролей для селекта
 async function loadRolesForSelect() {
     try {
-        const response = await fetch('/api/roles');
+        const response = await fetch(API_CONFIG.ROLES_URL);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -937,46 +937,34 @@ function renderRoles(roles) {
 }
 
     // Заглушки для ролей (пока не реализованы)
-    async function addRole() {
+async function addRole() {
     const roleName = document.getElementById('role-name').value.trim();
-
     if (!roleName) {
         alert('Укажите название роли');
         return;
     }
 
-    const roleData = {
-        name: roleName
-    };
-
     try {
-        console.log('Adding role:', roleData);
-        const response = await fetch('/roles', {
+        const response = await fetch(API_CONFIG.ROLES_URL, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(roleData)
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name: roleName })
         });
 
         if (response.ok) {
-            console.log('Role added successfully');
-            // Очищаем форму
             document.getElementById('role-name').value = '';
-
-            // Перезагружаем список ролей
             await loadRoles();
-            await loadRolesForSelect(); // Обновляем селект
-
-            alert('Роль успешно добавлена!');
+            await loadRolesForSelect();
+            alert('Роль добавлена!');
         } else {
-            throw new Error(`HTTP error! status: ${response.status}`);
+            throw new Error(`Ошибка: ${response.status}`);
         }
     } catch (error) {
-        console.error('Error adding role:', error);
+        console.error('Ошибка:', error);
         alert('Ошибка при добавлении роли: ' + error.message);
     }
 }
+
 
 async function editRole(id, currentName) {
     const newName = prompt('Введите новое название роли:', currentName);
@@ -991,7 +979,7 @@ async function editRole(id, currentName) {
 
     try {
         console.log('Updating role:', roleData);
-        const response = await fetch(`/roles/${id}`, {
+        const response = await fetch(`${API_CONFIG.ROLES_URL}/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -1021,7 +1009,7 @@ async function deleteRole(id) {
 
     try {
         console.log('Deleting role:', id);
-        const response = await fetch(`/roles/${id}`, {
+        const response = await fetch(`${API_CONFIG.ROLES_URL}/${id}`, {
             method: 'DELETE'
         });
 
