@@ -1,0 +1,125 @@
+2025-07-04 09:03:43.874 [korzhovvbot Telegram Executor] INFO  com.example.studentsbot.StudentsBot - Sending file photo_2025-06-18_16-27-01 (2).jpg to chat 973792032
+2025-07-04 10:38:48.635 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Зашел в 
+2025-07-04 10:40:28.407 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Зашел в 
+2025-07-04 10:40:39.219 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Зашел в 
+2025-07-04 10:42:29.444 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Зашел в 
+2025-07-04 10:42:39.402 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Зашел в 
+2025-07-04 10:44:28.439 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Зашел в 
+2025-07-04 11:03:34.980 [korzhovvbot Telegram Executor] ERROR com.example.studentsbot.StudentsBot - Ошибка при редактировании меню: Error executing org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageText query: [400] Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+2025-07-04 11:18:20.112 [korzhovvbot Telegram Executor] ERROR com.example.studentsbot.StudentsBot - Ошибка при редактировании меню: Error executing org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageText query: [400] Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+2025-07-04 11:42:59.900 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 
+2025-07-04 11:44:45.125 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 
+2025-07-04 11:45:14.498 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 
+2025-07-04 11:45:14.568 [korzhovvbot Telegram Executor] ERROR com.example.studentsbot.StudentsBot - Error executing org.telegram.telegrambots.meta.api.methods.send.SendMessage query: [400] Bad Request: text must be non-empty
+2025-07-04 11:45:17.378 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 
+2025-07-04 11:45:17.429 [korzhovvbot Telegram Executor] ERROR com.example.studentsbot.StudentsBot - Error executing org.telegram.telegrambots.meta.api.methods.send.SendMessage query: [400] Bad Request: text must be non-empty
+2025-07-04 11:48:23.247 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 
+2025-07-04 11:50:37.091 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 
+2025-07-04 11:51:25.811 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 
+2025-07-04 11:51:25.891 [korzhovvbot Telegram Executor] ERROR com.example.studentsbot.StudentsBot - Error executing org.telegram.telegrambots.meta.api.methods.send.SendMessage query: [400] Bad Request: text must be non-empty
+2025-07-04 11:51:31.159 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 
+2025-07-04 11:51:31.214 [korzhovvbot Telegram Executor] ERROR com.example.studentsbot.StudentsBot - Error executing org.telegram.telegrambots.meta.api.methods.send.SendMessage query: [400] Bad Request: text must be non-empty
+2025-07-04 11:52:31.698 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 
+2025-07-04 11:52:31.759 [korzhovvbot Telegram Executor] ERROR com.example.studentsbot.StudentsBot - Error executing org.telegram.telegrambots.meta.api.methods.send.SendMessage query: [400] Bad Request: text must be non-empty
+2025-07-04 11:54:30.404 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 
+2025-07-04 11:54:32.694 [korzhovvbot Telegram Executor] ERROR com.example.studentsbot.StudentsBot - Error executing org.telegram.telegrambots.meta.api.methods.send.SendMessage query: [400] Bad Request: text must be non-empty
+2025-07-04 11:54:34.373 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 
+2025-07-04 11:54:34.413 [korzhovvbot Telegram Executor] ERROR com.example.studentsbot.StudentsBot - Error executing org.telegram.telegrambots.meta.api.methods.send.SendMessage query: [400] Bad Request: text must be non-empty
+2025-07-04 12:04:54.557 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 
+2025-07-04 12:06:14.869 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 
+2025-07-04 12:06:18.331 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 
+2025-07-04 12:09:20.660 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 
+2025-07-04 12:09:24.130 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 
+2025-07-04 12:09:28.782 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 
+2025-07-04 12:14:13.399 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 
+2025-07-04 12:14:16.368 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 
+2025-07-04 12:14:57.717 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 
+2025-07-04 12:14:59.649 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 
+2025-07-04 12:15:49.532 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 
+2025-07-04 12:15:51.870 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 
+2025-07-04 12:16:02.335 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 
+2025-07-04 12:17:31.027 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 
+2025-07-04 12:17:33.262 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 
+2025-07-04 12:21:04.407 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 
+2025-07-04 12:21:06.422 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 
+2025-07-04 12:22:24.527 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 
+2025-07-04 12:22:26.890 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 
+2025-07-04 12:22:32.774 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 
+2025-07-04 12:22:34.081 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 
+2025-07-04 12:23:35.085 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 
+2025-07-04 12:23:37.233 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 
+2025-07-04 12:26:34.069 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 
+2025-07-04 12:26:35.627 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 
+2025-07-04 12:26:45.310 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 
+2025-07-04 12:27:57.258 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 
+2025-07-04 12:27:58.987 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 
+2025-07-04 12:28:02.971 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 
+2025-07-04 12:29:52.054 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 
+2025-07-04 12:30:23.022 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 
+2025-07-04 12:33:47.228 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 7201674426 перешел в C:\Users\vishvenkov.sergej\Documents\dir\Admin
+2025-07-04 12:33:49.669 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 7201674426 перешел в C:\Users\vishvenkov.sergej\Documents\dir
+2025-07-04 12:33:50.650 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 7201674426 перешел в C:\Users\vishvenkov.sergej\Documents\dir\Barmen
+2025-07-04 12:33:51.489 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 7201674426 перешел в C:\Users\vishvenkov.sergej\Documents\dir
+2025-07-04 12:33:52.282 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 7201674426 перешел в C:\Users\vishvenkov.sergej\Documents\dir\Waiter
+2025-07-04 12:33:53.280 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 7201674426 перешел в C:\Users\vishvenkov.sergej\Documents\dir
+2025-07-04 12:39:22.518 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 7201674426 перешел в C:\Users\vishvenkov.sergej\Documents\dir
+2025-07-04 12:39:24.992 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 7201674426 перешел в C:\Users\vishvenkov.sergej\Documents\dir\Admin
+2025-07-04 12:39:27.483 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 7201674426 перешел в C:\Users\vishvenkov.sergej\Documents\dir\Admin\PIDOR
+2025-07-04 12:39:29.716 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 7201674426 перешел в C:\Users\vishvenkov.sergej\Documents\dir\Admin
+2025-07-04 12:39:30.758 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 7201674426 перешел в C:\Users\vishvenkov.sergej\Documents\dir
+2025-07-04 13:22:04.791 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 309999570 перешел в C:\Users\vishvenkov.sergej\Documents\dir
+2025-07-04 13:22:12.462 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 309999570 перешел в C:\Users\vishvenkov.sergej\Documents\dir\Admin
+2025-07-04 13:22:14.826 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 309999570 перешел в C:\Users\vishvenkov.sergej\Documents\dir
+2025-07-04 13:22:15.959 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 309999570 перешел в C:\Users\vishvenkov.sergej\Documents\dir\Barmen
+2025-07-04 13:22:17.763 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 309999570 перешел в C:\Users\vishvenkov.sergej\Documents\dir
+2025-07-04 13:22:19.790 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 309999570 перешел в C:\Users\vishvenkov.sergej\Documents\dir\Waiter
+2025-07-04 13:22:21.009 [korzhovvbot Telegram Executor] INFO  com.example.studentsbot.StudentsBot - Sending file image.png to chat 309999570
+2025-07-04 13:22:23.727 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 309999570 перешел в C:\Users\vishvenkov.sergej\Documents\dir
+2025-07-04 13:22:25.266 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 309999570 перешел в C:\Users\vishvenkov.sergej\Documents\dir\Barmen
+2025-07-04 13:22:37.301 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 309999570 перешел в C:\Users\vishvenkov.sergej\Documents\dir
+2025-07-04 13:22:38.374 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 309999570 перешел в C:\Users\vishvenkov.sergej\Documents\dir\Admin
+2025-07-04 13:22:40.516 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 309999570 перешел в C:\Users\vishvenkov.sergej\Documents\dir\Admin\Admin2
+2025-07-04 13:22:41.525 [korzhovvbot Telegram Executor] INFO  com.example.studentsbot.StudentsBot - Sending file photo_2025-06-18_16-27-01 (2).jpg to chat 309999570
+2025-07-04 13:41:01.580 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 309999570 перешел в C:\Users\vishvenkov.sergej\Documents\dir
+2025-07-04 13:41:01.677 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 309999570 перешел в C:\Users\vishvenkov.sergej\Documents\dir
+2025-07-04 13:41:01.911 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 309999570 перешел в C:\Users\vishvenkov.sergej\Documents\dir
+2025-07-04 13:41:02.130 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 309999570 перешел в C:\Users\vishvenkov.sergej\Documents\dir
+2025-07-04 13:41:13.641 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 973792032 перешел в C:\Users\vishvenkov.sergej\Documents\dir
+2025-07-04 13:41:15.345 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 973792032 перешел в C:\Users\vishvenkov.sergej\Documents\dir\Barmen
+2025-07-04 13:41:18.129 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 973792032 перешел в C:\Users\vishvenkov.sergej\Documents\dir
+2025-07-04 13:41:18.953 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 973792032 перешел в C:\Users\vishvenkov.sergej\Documents\dir\Waiter
+2025-07-04 13:41:20.352 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 973792032 перешел в C:\Users\vishvenkov.sergej\Documents\dir
+2025-07-04 13:41:21.125 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 973792032 перешел в C:\Users\vishvenkov.sergej\Documents\dir\Admin
+2025-07-04 13:41:22.753 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 973792032 перешел в C:\Users\vishvenkov.sergej\Documents\dir
+2025-07-04 13:47:36.362 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 309999570 перешел в C:\Users\vishvenkov.sergej\Documents\dir
+2025-07-04 13:47:39.237 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 309999570 перешел в C:\Users\vishvenkov.sergej\Documents\dir\Admin
+2025-07-04 13:53:44.239 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 7201674426 (@korzhovvbot) перешел в C:\Users\vishvenkov.sergej\Documents\dir
+2025-07-04 13:53:46.178 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 7201674426 перешел в C:\Users\vishvenkov.sergej\Documents\dir\Barmen
+2025-07-04 13:53:48.590 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 7201674426 перешел в C:\Users\vishvenkov.sergej\Documents\dir
+2025-07-04 13:53:50.747 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 7201674426 перешел в C:\Users\vishvenkov.sergej\Documents\dir\Admin
+2025-07-04 13:53:51.987 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 7201674426 перешел в C:\Users\vishvenkov.sergej\Documents\dir
+2025-07-04 13:53:52.903 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 7201674426 перешел в C:\Users\vishvenkov.sergej\Documents\dir\Waiter
+2025-07-04 13:53:53.822 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 7201674426 перешел в C:\Users\vishvenkov.sergej\Documents\dir
+2025-07-04 14:02:17.008 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 7201674426 перешел в C:\Users\vishvenkov.sergej\Documents\dir\Barmen
+2025-07-04 14:02:18.675 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 7201674426 перешел в C:\Users\vishvenkov.sergej\Documents\dir
+2025-07-04 14:02:20.414 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 7201674426 (@USER_ACTIONS) перешел в C:\Users\vishvenkov.sergej\Documents\dir
+2025-07-04 14:02:22.210 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 7201674426 перешел в C:\Users\vishvenkov.sergej\Documents\dir\Admin
+2025-07-04 14:02:23.515 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 7201674426 перешел в C:\Users\vishvenkov.sergej\Documents\dir
+2025-07-04 14:06:32.962 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 7201674426 (@TsehSerg) перешел в C:\Users\vishvenkov.sergej\Documents\dir
+2025-07-04 14:06:38.101 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 7201674426 перешел в C:\Users\vishvenkov.sergej\Documents\dir\Admin
+2025-07-04 14:06:39.210 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 7201674426 перешел в C:\Users\vishvenkov.sergej\Documents\dir
+2025-07-04 14:06:39.940 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 7201674426 перешел в C:\Users\vishvenkov.sergej\Documents\dir\Barmen
+2025-07-04 14:06:41.277 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 7201674426 перешел в C:\Users\vishvenkov.sergej\Documents\dir
+2025-07-04 14:24:45.403 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Пользователь 7201674426 (@TsehSerg) перешел в C:\Users\vishvenkov.sergej\Documents\dir
+2025-07-04 14:24:46.351 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Callback от @TsehSerg (ID: 7201674426): dir:Barmen
+2025-07-04 14:24:46.358 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - TsehSerg
+2025-07-04 14:24:47.266 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Callback от @TsehSerg (ID: 7201674426): ..
+2025-07-04 14:24:47.267 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - TsehSerg
+2025-07-04 14:24:48.062 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Callback от @TsehSerg (ID: 7201674426): dir:Admin
+2025-07-04 14:24:48.063 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - TsehSerg
+2025-07-04 14:24:49.001 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Callback от @TsehSerg (ID: 7201674426): ..
+2025-07-04 14:24:49.002 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - TsehSerg
+2025-07-04 14:24:49.648 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Callback от @TsehSerg (ID: 7201674426): dir:Waiter
+2025-07-04 14:24:49.649 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - TsehSerg
+2025-07-04 14:24:53.470 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Callback от @TsehSerg (ID: 7201674426): ..
+2025-07-04 14:24:53.472 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - TsehSerg

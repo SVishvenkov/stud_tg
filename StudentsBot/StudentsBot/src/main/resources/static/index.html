@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Админ панель | Управление пользователями</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4361ee;
+            --primary-dark: #3a56d4;
+            --secondary: #3f37c9;
+            --danger: #a2adb3;
+            --success: #4cc9f0;
+            --warning: #f8961e;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --gray-light: #e9ecef;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f7fa;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Auth Form */
+        .auth-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #ffffff 100%);
+        }
+
+        .auth-card {
+            background: white;
+            width: 100%;
+            max-width: 400px;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transform: translateY(-20px);
+            transition: var(--transition);
+        }
+
+        .auth-card:hover {
+            transform: translateY(-25px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .auth-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .auth-header h1 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .auth-header p {
+            color: var(--gray);
+        }
+
+        .auth-logo {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--gray-light);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 20px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+            width: 100%;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-block {
+            display: block;
+            width: 100%;
+        }
+
+        /* Main Content */
+        .admin-container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 250px;
+            background: white;
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem 0;
+            position: fixed;
+            height: 100%;
+        }
+
+        .sidebar-header {
+            padding: 0 1.5rem 1.5rem;
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        .sidebar-header h2 {
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+        }
+
+        .sidebar-header h2 i {
+            margin-right: 10px;
+        }
+
+        .sidebar-menu {
+            padding: 1.5rem 0;
+        }
+
+        .menu-item {
+            padding: 0.75rem 1.5rem;
+            display: flex;
+            align-items: center;
+            color: var(--gray);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .menu-item:hover, .menu-item.active {
+            color: var(--primary);
+            background-color: rgba(67, 97, 238, 0.1);
+        }
+
+        .menu-item i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .main-content {
+            flex: 1;
+            margin-left: 250px;
+            padding: 2rem;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        .header h1 {
+            color: var(--dark);
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+        }
+
+        .user-profile img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .card {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        .card-header h2 {
+            color: var(--dark);
+            font-size: 1.5rem;
+        }
+
+        .btn-sm {
+            padding: 8px 15px;
+            font-size: 0.875rem;
+        }
+
+        .btn-danger {
+            background-color: var(--danger);
+        }
+
+        .btn-danger:hover {
+            background-color: #72afff;
+        }
+
+        .btn-success {
+            background-color: var(--success);
+        }
+
+        .btn-success:hover {
+            background-color: #3ab4d9;
+        }
+
+        .btn-warning {
+            background-color: var(--warning);
+        }
+
+        .btn-warning:hover {
+            background-color: #e68a19;
+        }
+
+        .table-responsive {
+            max-height: 300px;
+            overflow-y: auto;
+            border: 1px solid #eee;
+            display: block;
+        }
+
+        .table-responsive table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+
+        .table-responsive th,
+        .table-responsive td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--gray-light);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .table-responsive::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        .table-responsive::-webkit-scrollbar-thumb {
+            background-color: rgba(0,0,0,0.2);
+            border-radius: 4px;
+        }
+
+        .table-responsive::-webkit-scrollbar-track {
+            background-color: rgba(0,0,0,0.05);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        th {
+            background-color: var(--light);
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        tr:hover {
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        .badge-primary {
+            background-color: rgba(67, 97, 238, 0.1);
+            color: var(--primary);
+        }
+
+        .badge-success {
+            background-color: rgba(76, 201, 240, 0.1);
+            color: var(--success);
+        }
+
+        .badge-warning {
+            background-color: rgba(248, 150, 30, 0.1);
+            color: var(--warning);
+        }
+
+        .badge-danger {
+            background-color: rgba(247, 37, 133, 0.1);
+            color: var(--danger);
+        }
+
+        .action-btns {
+            display: flex;
+            gap: 5px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 20px;
+            color: var(--gray);
+        }
+
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 10px;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+        }
+
+        /* Modal */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            width: 100%;
+            max-width: 500px;
+            transform: translateY(-50px);
+            transition: var(--transition);
+        }
+
+        .modal.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .modal-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--gray-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h3 {
+            color: var(--dark);
+        }
+
+        .modal-body {
+            padding: 1.5rem;
+        }
+
+        .modal-footer {
+            padding: 1.5rem;
+            border-top: 1px solid var(--gray-light);
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--gray);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .admin-container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                position: relative;
+                height: auto;
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+
+            .table-responsive {
+                width: 100%;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- Auth Form -->
+<div id="auth-container" class="auth-container">
+    <div class="auth-card">
+        <div class="auth-header">
+            <div class="auth-logo">
+                <i class="fas fa-user-shield"></i>
+            </div>
+            <h1>Администратор</h1>
+            <p>Войдите в панель управления</p>
+        </div>
+        <div class="form-group">
+            <label for="login">Логин</label>
+            <input type="text" id="login" class="form-control" placeholder="Введите ваш логин">
+        </div>
+        <div class="form-group">
+            <label for="password">Пароль</label>
+            <input type="password" id="password" class="form-control" placeholder="Введите ваш пароль">
+        </div>
+        <button class="btn" onclick="handleLogin()">
+            <i class="fas fa-sign-in-alt"></i> Войти
+        </button>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div id="admin-container" class="admin-container hidden">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2><i class="fas fa-cog"></i> Админ Панель</h2>
+        </div>
+        <div class="sidebar-menu">
+            <a href="#" class="menu-item active" onclick="openTab('users')">
+                <i class="fas fa-users"></i> Пользователи
+            </a>
+            <a href="#" class="menu-item" onclick="openTab('roles')">
+                <i class="fas fa-user-tag"></i> Роли
+            </a>
+            <a href="#" class="menu-item" onclick="logout()">
+                <i class="fas fa-sign-out-alt"></i> Выйти
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <div class="header">
+            <h1 id="page-title">Управление пользователями</h1>
+            <div class="user-profile">
+                <img src="https://via.placeholder.com/40" alt="Admin">
+                <span>Администратор</span>
+            </div>
+        </div>
+
+        <!-- Users Tab -->
+        <div id="users-tab" class="tab-content">
+            <div class="card">
+                <div class="card-header">
+                    <h2><i class="fas fa-user-plus"></i> Добавить пользователя</h2>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="user-number">Номер телефона</label>
+                        <input type="text" id="user-number" class="form-control" placeholder="+79991234567">
+                    </div>
+                    <div class="form-group">
+                        <label for="user-chatId">Chat ID</label>
+                        <input type="text" id="user-chatId" class="form-control" placeholder="123456789">
+                    </div>
+                    <div class="form-group">
+                        <label for="user-role">Роль</label>
+                        <select id="user-role" class="form-control">
+                            <option value="">Выберите роль</option>
+                            <option value="1">Администратор</option>
+                            <option value="2">Модератор</option>
+                            <option value="3">Пользователь</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-success" onclick="addUser()">
+                        <i class="fas fa-save"></i> Сохранить
+                    </button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2><i class="fas fa-users"></i> Список пользователей</h2>
+                </div>
+                <div class="card-body">
+                    <div id="error-message" class="error hidden"></div>
+                    <div class="table-responsive" id="users-table-container">
+                        <table id="users-table">
+                            <thead>
+                            <tr>
+                                <th>Номер</th>
+                                <th>Chat ID</th>
+                                <th>Роль</th>
+                                <th>Действия</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td colspan="4" class="loading">Загрузка...</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Roles Tab -->
+        <div id="roles-tab" class="tab-content hidden">
+            <div class="card">
+                <div class="card-header">
+                    <h2><i class="fas fa-plus-circle"></i> Добавить роль</h2>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="role-name">Название роли</label>
+                        <input type="text" id="role-name" class="form-control" placeholder="Например: Сутулая собака">
+                    </div>
+                    <button class="btn btn-success" onclick="addRole()">
+                        <i class="fas fa-save"></i> Сохранить
+                    </button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2><i class="fas fa-tags"></i> Список ролей</h2>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table id="roles-table">
+                            <thead>
+                            <tr>
+                                <th>Название</th>
+                                <th>Действия</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <td colspan="2" class="loading">Загрузка...</td>
+                            <!-- Data will be loaded dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Delete Confirmation Modal -->
+<div id="confirm-modal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Подтверждение</h3>
+            <button class="close-btn" onclick="closeModal()">&times;</button>
+        </div>
+        <div class="modal-body">
+            <p id="confirm-message">Вы уверены, что хотите выполнить это действие?</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-sm" onclick="closeModal()">Отмена</button>
+            <button id="confirm-action" class="btn btn-sm btn-danger">Удалить</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Конфигурация API
+    const API_CONFIG = {
+        BASE_URL: '/api/users',
+        ROLES_URL: '/api/roles'
+    };
+
+    // Константы для авторизации
+    const ADMIN_CREDENTIALS = {
+        login: 'admin',
+        password: 'admin123'
+    };
+
+    // Загрузка пользователей из бэкенда
+async function loadUsers() {
+    try {
+        console.log('Loading users...');
+        const response = await fetch(API_CONFIG.BASE_URL);
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const users = await response.json();
+        console.log('Users loaded:', users);
+        renderUsers(users);
+
+        await loadRolesForSelect();
+
+    } catch (error) {
+        console.error('Error loading users:', error);
+        showError('Не удалось загрузить пользователей: ' + error.message);
+
+        // Показываем сообщение об ошибке в таблице
+        const tbody = document.querySelector('#users-table tbody');
+        tbody.innerHTML = '<tr><td colspan="4" style="text-align: center; color: #dc3545;">Ошибка загрузки данных</td></tr>';
+    }
+}
+
+  // Отображение пользователей в таблице
+function renderUsers(users) {
+    const tbody = document.querySelector('#users-table tbody');
+    tbody.innerHTML = '';
+
+    if (users.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="4" style="text-align: center; color: #6c757d;">Нет пользователей</td></tr>';
+        return;
+    }
+
+    users.forEach(user => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${user.user_number || 'Не указан'}</td>
+            <td>${user.chat_id || 'Не указан'}</td>
+            <td><span class="badge badge-primary">${user.role_name || 'Роль не указана'}</span></td>
+            <td class="action-btns">
+                <button class="btn btn-sm btn-danger" onclick="deleteUser(${user.id})">
+                    <i class="fas fa-trash-alt"></i> Удалить
+                </button>
+            </td>
+        `;
+        tbody.appendChild(row);
+    });
+}
+
+    // Добавление пользователя
+    async function addUser() {
+        const userNumber = document.getElementById('user-number').value.trim();
+        const chatId = document.getElementById('user-chatId').value.trim();
+        const roleId = document.getElementById('user-role').value;
+
+        // Валидация
+        if (!userNumber) {
+            alert('Укажите номер телефона');
+            return;
+        }
+
+        if (!chatId) {
+            alert('Укажите Chat ID');
+            return;
+        }
+
+        if (!roleId) {
+            alert('Выберите роль');
+            return;
+        }
+
+        const userData = {
+            user_number: userNumber,
+            chat_id: parseInt(chatId),
+            role_id: parseInt(roleId)
+        };
+
+        try {
+            console.log('Adding user:', userData);
+            const response = await fetch(API_CONFIG.BASE_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(userData)
+            });
+
+            if (response.ok) {
+                console.log('User added successfully');
+                // Очищаем форму
+                document.getElementById('user-number').value = '';
+                document.getElementById('user-chatId').value = '';
+                document.getElementById('user-role').value = '';
+
+                // Перезагружаем список пользователей
+                await loadUsers();
+
+                alert('Пользователь успешно добавлен!');
+            } else {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+        } catch (error) {
+            console.error('Error adding user:', error);
+            alert('Ошибка при добавлении пользователя: ' + error.message);
+        }
+    }
+
+    // Удаление пользователя
+    async function deleteUser(id) {
+        if (!confirm('Вы уверены, что хотите удалить этого пользователя?')) {
+            return;
+        }
+
+        try {
+            console.log('Deleting user:', id);
+            const response = await fetch(`${API_CONFIG.BASE_URL}/${id}`, {
+                method: 'DELETE'
+            });
+
+            if (response.ok) {
+                console.log('User deleted successfully');
+                await loadUsers();
+                alert('Пользователь успешно удален!');
+            } else {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+        } catch (error) {
+            console.error('Error deleting user:', error);
+            alert('Ошибка при удалении пользователя: ' + error.message);
+        }
+    }
+
+    // Показать ошибку
+    function showError(message) {
+        const errorDiv = document.getElementById('error-message');
+        errorDiv.textContent = message;
+        errorDiv.classList.remove('hidden');
+
+        // Скрыть ошибку через 5 секунд
+        setTimeout(() => {
+            errorDiv.classList.add('hidden');
+        }, 5000);
+    }
+
+    // Обработка авторизации
+    function handleLogin() {
+        const loginInput = document.getElementById('login').value;
+        const passwordInput = document.getElementById('password').value;
+
+        if (loginInput === ADMIN_CREDENTIALS.login && passwordInput === ADMIN_CREDENTIALS.password) {
+            showContent();
+        } else {
+            alert('Неверные учетные данные!');
+        }
+    }
+
+    // Показать основной контент
+    function showContent() {
+        document.getElementById('auth-container').style.display = 'none';
+        document.getElementById('admin-container').classList.remove('hidden');
+        loadUsers(); // Загружаем пользователей при входе
+    }
+
+    // Выход из системы
+    function logout() {
+        document.getElementById('admin-container').classList.add('hidden');
+        document.getElementById('auth-container').style.display = 'flex';
+        document.getElementById('login').value = '';
+        document.getElementById('password').value = '';
+    }
+
+    // Переключение между вкладками
+    function openTab(tabName) {
+        // Скрыть все вкладки
+        document.querySelectorAll('.tab-content').forEach(tab => {
+            tab.classList.add('hidden');
+        });
+
+        // Показать выбранную вкладку
+        document.getElementById(tabName + '-tab').classList.remove('hidden');
+
+        // Обновить активные пункты меню
+        document.querySelectorAll('.menu-item').forEach(item => {
+            item.classList.remove('active');
+        });
+
+        event.currentTarget.classList.add('active');
+
+        // Обновить заголовок страницы
+        const titleMap = {
+            'users': 'Управление пользователями',
+            'roles': 'Управление ролями'
+        };
+        document.getElementById('page-title').textContent = titleMap[tabName];
+    }
+
+    // Загрузка ролей для селекта
+async function loadRolesForSelect() {
+    try {
+        const response = await fetch('/api/roles');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const roles = await response.json();
+        const select = document.getElementById('user-role');
+
+        // Очищаем существующие опции (кроме первой)
+        select.innerHTML = '<option value="">Выберите роль</option>';
+
+        // Добавляем роли из БД
+        roles.forEach(role => {
+            const option = document.createElement('option');
+            option.value = role.id;
+            option.textContent = role.name;
+            select.appendChild(option);
+        });
+
+    } catch (error) {
+        console.error('Error loading roles for select:', error);
+    }
+}
+
+// Загрузка ролей для таблицы
+async function loadRoles() {
+    try {
+        console.log('Loading roles...');
+        const response = await fetch('/api/roles');
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const roles = await response.json();
+        console.log('Roles loaded:', roles);
+        renderRoles(roles);
+
+    } catch (error) {
+        console.error('Error loading roles:', error);
+        showError('Не удалось загрузить роли: ' + error.message);
+
+        const tbody = document.querySelector('#roles-table tbody');
+        tbody.innerHTML = '<tr><td colspan="2" style="text-align: center; color: #dc3545;">Ошибка загрузки данных</td></tr>';
+    }
+}
+
+// Отображение ролей в таблице
+function renderRoles(roles) {
+    const tbody = document.querySelector('#roles-table tbody');
+    tbody.innerHTML = '';
+
+    if (roles.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="2" style="text-align: center; color: #6c757d;">Нет ролей</td></tr>';
+        return;
+    }
+
+    roles.forEach(role => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${role.name}</td>
+            <td class="action-btns">
+                <button class="btn btn-sm btn-warning" onclick="editRole(${role.id}, '${role.name}')">
+                    <i class="fas fa-edit"></i> Изменить
+                </button>
+                <button class="btn btn-sm btn-danger" onclick="deleteRole(${role.id})">
+                    <i class="fas fa-trash-alt"></i> Удалить
+                </button>
+            </td>
+        `;
+        tbody.appendChild(row);
+    });
+}
+
+    // Заглушки для ролей (пока не реализованы)
+    async function addRole() {
+    const roleName = document.getElementById('role-name').value.trim();
+
+    if (!roleName) {
+        alert('Укажите название роли');
+        return;
+    }
+
+    const roleData = {
+        name: roleName
+    };
+
+    try {
+        console.log('Adding role:', roleData);
+        const response = await fetch('/roles', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(roleData)
+        });
+
+        if (response.ok) {
+            console.log('Role added successfully');
+            // Очищаем форму
+            document.getElementById('role-name').value = '';
+
+            // Перезагружаем список ролей
+            await loadRoles();
+            await loadRolesForSelect(); // Обновляем селект
+
+            alert('Роль успешно добавлена!');
+        } else {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+    } catch (error) {
+        console.error('Error adding role:', error);
+        alert('Ошибка при добавлении роли: ' + error.message);
+    }
+}
+
+async function editRole(id, currentName) {
+    const newName = prompt('Введите новое название роли:', currentName);
+
+    if (!newName || newName.trim() === '') {
+        return;
+    }
+
+    const roleData = {
+        name: newName.trim()
+    };
+
+    try {
+        console.log('Updating role:', roleData);
+        const response = await fetch(`/roles/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(roleData)
+        });
+
+        if (response.ok) {
+            console.log('Role updated successfully');
+            await loadRoles();
+            await loadRolesForSelect(); // Обновляем селект
+            alert('Роль успешно обновлена!');
+        } else {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+    } catch (error) {
+        console.error('Error updating role:', error);
+        alert('Ошибка при обновлении роли: ' + error.message);
+    }
+}
+
+// Удаление роли
+async function deleteRole(id) {
+    if (!confirm('Вы уверены, что хотите удалить эту роль?')) {
+        return;
+    }
+
+    try {
+        console.log('Deleting role:', id);
+        const response = await fetch(`/roles/${id}`, {
+            method: 'DELETE'
+        });
+
+        if (response.ok) {
+            console.log('Role deleted successfully');
+            await loadRoles();
+            await loadRolesForSelect(); // Обновляем селект
+            alert('Роль успешно удалена!');
+        } else {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+    } catch (error) {
+        console.error('Error deleting role:', error);
+        alert('Ошибка при удалении роли: ' + error.message);
+    }
+}
+
+// 6. ИЗМЕНИТЬ функцию openTab() - добавить загрузку ролей:
+function openTab(tabName) {
+    // Скрыть все вкладки
+    document.querySelectorAll('.tab-content').forEach(tab => {
+        tab.classList.add('hidden');
+    });
+
+    // Показать выбранную вкладку
+    document.getElementById(tabName + '-tab').classList.remove('hidden');
+
+    // Обновить активные пункты меню
+    document.querySelectorAll('.menu-item').forEach(item => {
+        item.classList.remove('active');
+    });
+
+    event.currentTarget.classList.add('active');
+
+    // Обновить заголовок страницы
+    const titleMap = {
+        'users': 'Управление пользователями',
+        'roles': 'Управление ролями'
+    };
+    document.getElementById('page-title').textContent = titleMap[tabName];
+
+    // ДОБАВИТЬ: Загрузка данных для соответствующей вкладки
+    if (tabName === 'roles') {
+        loadRoles();
+    }
+}
+
+    function closeModal() {
+        document.getElementById('confirm-modal').classList.remove('active');
+    }
+
+    // Инициализация при загрузке страницы
+    window.onload = function() {
+        document.getElementById('auth-container').style.display = 'flex';
+    };
+</script>
+</body>
+</html>

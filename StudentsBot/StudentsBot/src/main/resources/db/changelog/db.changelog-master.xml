@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <!-- Изменение для создания таблицы Role -->
+    <changeSet id="1" author="sv">
+        <createTable tableName="roles">
+            <column name="id" type="serial" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="roles_name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <!-- Изменение для создания таблицы User -->
+    <changeSet id="2" author="author_name">
+        <createTable tableName="users">
+            <column name="id" type="serial" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="user_number" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="role_id" type="integer">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <!-- Добавление внешнего ключа -->
+        <addForeignKeyConstraint
+                baseTableName="users"
+                baseColumnNames="role_id"
+                referencedTableName="roles"
+                referencedColumnNames="id"
+                constraintName="fk_user_role"/>
+    </changeSet>
+
+    <!-- Изменение для добавления начальных данных в таблицу Role -->
+<!--    <changeSet id="3" author="author_name">-->
+<!--        <insert tableName="roles">-->
+<!--            <column name="id" valueNumeric="1"/>-->
+<!--            <column name="name" value="ADMIN"/>-->
+<!--        </insert>-->
+<!--        <insert tableName="roles">-->
+<!--            <column name="id" valueNumeric="2"/>-->
+<!--            <column name="name" value="USER"/>-->
+<!--        </insert>-->
+<!--    </changeSet>-->
+
+<!--    &lt;!&ndash; Изменение для добавления начальных данных в таблицу User &ndash;&gt;-->
+<!--    <changeSet id="4" author="author_name">-->
+<!--        <insert tableName="users">-->
+<!--            <column name="id" valueNumeric="1"/>-->
+<!--            <column name="user_number" value="user1"/>-->
+<!--            <column name="role_id" valueNumeric="1"/> &lt;!&ndash; ADMIN &ndash;&gt;-->
+<!--        </insert>-->
+<!--        <insert tableName="users">-->
+<!--            <column name="id" valueNumeric="2"/>-->
+<!--            <column name="user_number" value="user2"/>-->
+<!--            <column name="role_id" valueNumeric="2"/> &lt;!&ndash; USER &ndash;&gt;-->
+<!--        </insert>-->
+<!--    </changeSet>-->
+
+    <changeSet id="4" author="sv">
+        <addColumn tableName="users">
+            <column name="chat_id" type="integer"></column>
+        </addColumn>
+    </changeSet>
+
+    <changeSet id="5" author="sv">
+        <modifyDataType tableName="users" columnName="chat_id" newDataType="BIGINT"/>
+    </changeSet>
+
+</databaseChangeLog>

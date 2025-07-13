@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://82.202.156.61:5455/sqlstudkort
+    username: postgres
+    password: studkor
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: true
+    hibernate.ddl-auto:  validate
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.xml
+    enabled: true
+    drop-first: false
+
+mvc:
+  static-path-pattern: /static/**
+  web:
+    resources:
+      static-locations: classpath:/static/
+
+#logging:
+#  level:
+#    root: DEBUG  # Включает DEBUG-логирование для всего приложения
+
