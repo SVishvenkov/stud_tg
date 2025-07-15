@@ -45,55 +45,97 @@ public class StudentsBot extends TelegramLongPollingBot {
         this.lister = new DirectoryLister("C:Users/Serge/Documents/Bot/directories");
     }
 
+
     @Override
     public void onUpdateReceived(Update update) {
-        Message message = update.getMessage();
-        long chatId = message.getChatId();
-        String userName = message.getFrom().getUserName();
+        if (update.hasMessage()) {
+            Message message = update.getMessage();
+            long chatId = message.getChatId();
+            String userName = message.getFrom().getUserName();
 
-        if (message.hasText()) {
-            String text = message.getText();
-
-            if (text.equals("/start") || text.equals("Start")) {
-                requestPhoneNumber(chatId); // Запрашиваем номер
-            }
-        } else if (message.hasContact()) {
-            // Обработка номера телефона
-            Contact contact = message.getContact();
-            String phoneNumber = contact.getPhoneNumber();
-
-
-            if (userVerification.isUserValid(chatId, phoneNumber)) {
-                try {
-                    execute(SendMessage.builder()
-                            .chatId(chatId)
-                            .text("✅ Доступ разрешен")
-                            .replyMarkup(new ReplyKeyboardRemove(true))
-                            .build());
-                } catch (TelegramApiException e) {
-                    throw new RuntimeException(e);
+            if (message.hasText()) {
+                String text = message.getText();
+                if (text.equals("/start") || text.equals("Start")) {
+                    requestPhoneNumber(chatId);
                 }
-                sendPrivateDirectoryMenu(chatId, userName);
-            } else {
-                try {
-                    execute(SendMessage.builder()
-                            .chatId(chatId)
-                            .text("❌ Доступ запрещен\nОбратитесь к администратору")
-                            .replyMarkup(new ReplyKeyboardRemove(true))
-                            .build());
-                } catch (TelegramApiException e) {
-                    throw new RuntimeException(e);
+            } else if (message.hasContact()) {
+                Contact contact = message.getContact();
+                String phoneNumber = contact.getPhoneNumber();
+
+                if (userVerification.isUserValid(chatId, phoneNumber)) {
+                    try {
+                        execute(SendMessage.builder()
+                                .chatId(chatId)
+                                .text("✅ Доступ разрешен")
+                                .replyMarkup(new ReplyKeyboardRemove(true))
+                                .build());
+                        sendPrivateDirectoryMenu(chatId, userName);
+                    } catch (TelegramApiException e) {
+                        logger.error("Ошибка при отправке сообщения", e);
+                    }
+                } else {
+                    try {
+                        execute(SendMessage.builder()
+                                .chatId(chatId)
+                                .text("❌ Доступ запрещен\nОбратитесь к администратору")
+                                .replyMarkup(new ReplyKeyboardRemove(true))
+                                .build());
+                    } catch (TelegramApiException e) {
+                        logger.error("Ошибка при отправке сообщения", e);
+                    }
                 }
             }
-        }
-        if (update.hasMessage() && update.getMessage().hasText()) {
-            handleMessage(update);
         } else if (update.hasCallbackQuery()) {
             handleCallbackQuery(update);
         }
-
-
     }
+//    @Override
+//    public void onUpdateReceived(Update update) {
+//        Message message = update.getMessage();
+//        long chatId = message.getChatId();
+//        String userName = message.getFrom().getUserName();
+//
+//        if (message.hasText()) {
+//            String text = message.getText();
+//
+//            if (text.equals("/start") || text.equals("Start")) {
+//                requestPhoneNumber(chatId); // Запрашиваем номер
+//            }
+//        } else if (message.hasContact()) {
+//            // Обработка номера телефона
+//            Contact contact = message.getContact();
+//            String phoneNumber = contact.getPhoneNumber();
+//
+//
+//            if (userVerification.isUserValid(chatId, phoneNumber)) {
+//                try {
+//                    execute(SendMessage.builder()
+//                            .chatId(chatId)
+//                            .text("✅ Доступ разрешен")
+//                            .replyMarkup(new ReplyKeyboardRemove(true))
+//                            .build());
+//                } catch (TelegramApiException e) {
+//                    throw new RuntimeException(e);
+//                }
+//                sendPrivateDirectoryMenu(chatId, userName);
+//            } else {
+//                try {
+//                    execute(SendMessage.builder()
+//                            .chatId(chatId)
+//                            .text("❌ Доступ запрещен\nОбратитесь к администратору")
+//                            .replyMarkup(new ReplyKeyboardRemove(true))
+//                            .build());
+//                } catch (TelegramApiException e) {
+//                    throw new RuntimeException(e);
+//                }
+//            }
+//        }
+//        if (update.hasMessage() && update.getMessage().hasText()) {
+//            handleMessage(update);
+//        } else if (update.hasCallbackQuery()) {
+//            handleCallbackQuery(update);
+//        }
+//    }
 
     private void handleMessage(Update update) {
         String messageText = update.getMessage().getText();
@@ -225,7 +267,7 @@ public class StudentsBot extends TelegramLongPollingBot {
     private void handleCallbackQuery(Update update) {
         String callbackData = update.getCallbackQuery().getData();
         long chatId = update.getCallbackQuery().getMessage().getChatId();
-        int messageId = update.getCallbackQuery().getMessage().getMessageId(); // Получаем ID сообщения
+        int messageId = update.getCallbackQuery().getMessage().getMessageId();
         String userName = update.getCallbackQuery().getFrom().getUserName();
 
         userActions.info("Перешел в @{} (ID: {}): {}",
@@ -233,20 +275,17 @@ public class StudentsBot extends TelegramLongPollingBot {
                 chatId,
                 callbackData);
 
-
         if (callbackData.equals("..")) {
             lister.navigateToParent();
+            editDirectoryMenu(chatId, messageId, userName);
         } else if (callbackData.startsWith("dir:")) {
             String dirName = callbackData.substring(4);
             lister.navigateToSubdirectory(dirName);
+            editDirectoryMenu(chatId, messageId, userName);
         } else if (callbackData.startsWith("file:")) {
             String fileName = callbackData.substring(5);
             sendFile(chatId, fileName);
-            return; // Не обновляем меню после отправки файла
         }
-
-        // Редактируем текущее сообщение вместо отправки нового
-        editDirectoryMenu(chatId, update.getCallbackQuery().getMessage().getMessageId(), userName);
     }
 
     private void sendFile(long chatId, String fileName) {

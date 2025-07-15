@@ -42,102 +42,6 @@
             padding: 20px;
         }
 
-        /* Auth Form */
-        .auth-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background: linear-gradient(135deg, #667eea 0%, #ffffff 100%);
-        }
-
-        .auth-card {
-            background: white;
-            width: 100%;
-            max-width: 400px;
-            padding: 2rem;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            transform: translateY(-20px);
-            transition: var(--transition);
-        }
-
-        .auth-card:hover {
-            transform: translateY(-25px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .auth-header {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .auth-header h1 {
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .auth-header p {
-            color: var(--gray);
-        }
-
-        .auth-logo {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--dark);
-            font-weight: 500;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid var(--gray-light);
-            border-radius: var(--border-radius);
-            font-size: 1rem;
-            transition: var(--transition);
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 20px;
-            background-color: var(--primary);
-            color: white;
-            border: none;
-            border-radius: var(--border-radius);
-            font-size: 1rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: var(--transition);
-            text-align: center;
-            width: 100%;
-        }
-
-        .btn:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-2px);
-        }
-
-        .btn-block {
-            display: block;
-            width: 100%;
-        }
-
         /* Main Content */
         .admin-container {
             display: flex;
@@ -151,6 +55,33 @@
             padding: 1.5rem 0;
             position: fixed;
             height: 100%;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--gray-light);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+         .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+        }
+
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+         .form-group {
+            margin-bottom: 1.5rem;
         }
 
         .sidebar-header {
@@ -243,6 +174,31 @@
         .card-header h2 {
             color: var(--dark);
             font-size: 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 20px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+            width: 100%;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-block {
+            display: block;
+            width: 100%;
         }
 
         .btn-sm {
@@ -477,32 +433,8 @@
     </style>
 </head>
 <body>
-<!-- Auth Form -->
-<div id="auth-container" class="auth-container">
-    <div class="auth-card">
-        <div class="auth-header">
-            <div class="auth-logo">
-                <i class="fas fa-user-shield"></i>
-            </div>
-            <h1>Администратор</h1>
-            <p>Войдите в панель управления</p>
-        </div>
-        <div class="form-group">
-            <label for="login">Логин</label>
-            <input type="text" id="login" class="form-control" placeholder="Введите ваш логин">
-        </div>
-        <div class="form-group">
-            <label for="password">Пароль</label>
-            <input type="password" id="password" class="form-control" placeholder="Введите ваш пароль">
-        </div>
-        <button class="btn" onclick="handleLogin()">
-            <i class="fas fa-sign-in-alt"></i> Войти
-        </button>
-    </div>
-</div>
-
 <!-- Main Content -->
-<div id="admin-container" class="admin-container hidden">
+<div id="admin-container" class="admin-container">
     <!-- Sidebar -->
     <div class="sidebar">
         <div class="sidebar-header">
@@ -515,7 +447,7 @@
             <a href="#" class="menu-item" onclick="openTab('roles')">
                 <i class="fas fa-user-tag"></i> Роли
             </a>
-            <a href="#" class="menu-item" onclick="logout()">
+            <a href="/logout" class="menu-item">
                 <i class="fas fa-sign-out-alt"></i> Выйти
             </a>
         </div>
@@ -654,63 +586,158 @@
         ROLES_URL: '/api/roles'
     };
 
-    // Константы для авторизации
-    const ADMIN_CREDENTIALS = {
-        login: 'admin',
-        password: 'admin123'
-    };
-
     // Загрузка пользователей из бэкенда
-async function loadUsers() {
-    try {
-        console.log('Loading users...');
-        const response = await fetch(API_CONFIG.BASE_URL);
+    async function loadUsers() {
+        try {
+            console.log('Loading users...');
+            const response = await fetch(API_CONFIG.BASE_URL);
 
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const users = await response.json();
+            console.log('Users loaded:', users);
+            renderUsers(users);
+
+            await loadRolesForSelect();
+
+        } catch (error) {
+            console.error('Error loading users:', error);
+            showError('Не удалось загрузить пользователей: ' + error.message);
+
+            // Показываем сообщение об ошибке в таблице
+            const tbody = document.querySelector('#users-table tbody');
+            tbody.innerHTML = '<tr><td colspan="4" style="text-align: center; color: #dc3545;">Ошибка загрузки данных</td></tr>';
+        }
+    }
+
+    // Отображение пользователей в таблице
+    // Отображение пользователей в таблице
+    function renderUsers(users) {
+        const tbody = document.querySelector('#users-table tbody');
+        tbody.innerHTML = '';
+
+        if (users.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="5" style="text-align: center; color: #6c757d;">Нет пользователей</td></tr>';
+            return;
         }
 
-        const users = await response.json();
-        console.log('Users loaded:', users);
-        renderUsers(users);
-
-        await loadRolesForSelect();
-
-    } catch (error) {
-        console.error('Error loading users:', error);
-        showError('Не удалось загрузить пользователей: ' + error.message);
-
-        // Показываем сообщение об ошибке в таблице
-        const tbody = document.querySelector('#users-table tbody');
-        tbody.innerHTML = '<tr><td colspan="4" style="text-align: center; color: #dc3545;">Ошибка загрузки данных</td></tr>';
-    }
-}
-
-  // Отображение пользователей в таблице
-function renderUsers(users) {
-    const tbody = document.querySelector('#users-table tbody');
-    tbody.innerHTML = '';
-
-    if (users.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="4" style="text-align: center; color: #6c757d;">Нет пользователей</td></tr>';
-        return;
+        users.forEach(user => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${user.user_number || 'Не указан'}</td>
+                <td>${user.chat_id || 'Не указан'}</td>
+                <td><span class="badge badge-primary">${user.role_name || 'Роль не указана'}</span></td>
+                <td class="action-btns">
+                    <button class="btn btn-sm btn-warning" onclick="editUser(${user.id}, '${user.user_number}', ${user.chat_id}, ${user.role_id})">
+                        <i class="fas fa-edit"></i> Изменить
+                    </button>
+                    <button class="btn btn-sm btn-danger" onclick="deleteUser(${user.id})">
+                        <i class="fas fa-trash-alt"></i> Удалить
+                    </button>
+                </td>
+            `;
+            tbody.appendChild(row);
+        });
     }
 
-    users.forEach(user => {
-        const row = document.createElement('tr');
-        row.innerHTML = `
-            <td>${user.user_number || 'Не указан'}</td>
-            <td>${user.chat_id || 'Не указан'}</td>
-            <td><span class="badge badge-primary">${user.role_name || 'Роль не указана'}</span></td>
-            <td class="action-btns">
-                <button class="btn btn-sm btn-danger" onclick="deleteUser(${user.id})">
-                    <i class="fas fa-trash-alt"></i> Удалить
-                </button>
-            </td>
+    // Редактирование пользователя
+    async function editUser(id, userNumber, chatId, roleId) {
+        // Создаем модальное окно для редактирования
+        const modal = document.createElement('div');
+        modal.className = 'modal active';
+        modal.innerHTML = `
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Редактирование пользователя</h3>
+                    <button class="close-btn" onclick="this.closest('.modal').remove()">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="edit-user-number">Номер телефона</label>
+                        <input type="text" id="edit-user-number" class="form-control" value="${userNumber}">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-user-chatId">Chat ID</label>
+                        <input type="text" id="edit-user-chatId" class="form-control" value="${chatId}">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-user-role">Роль</label>
+                        <select id="edit-user-role" class="form-control">
+                            <option value="">Выберите роль</option>
+                            <!-- Роли будут загружены динамически -->
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-sm" onclick="this.closest('.modal').remove()">Отмена</button>
+                    <button class="btn btn-sm btn-success" onclick="saveUserChanges(${id})">
+                        <i class="fas fa-save"></i> Сохранить
+                    </button>
+                </div>
+            </div>
         `;
-        tbody.appendChild(row);
-    });
-}
+        document.body.appendChild(modal);
+
+        // Загружаем роли для выпадающего списка
+        try {
+            const response = await fetch(API_CONFIG.ROLES_URL);
+            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+            const roles = await response.json();
+
+            const select = document.getElementById('edit-user-role');
+            select.innerHTML = '<option value="">Выберите роль</option>';
+
+            roles.forEach(role => {
+                const option = document.createElement('option');
+                option.value = role.id;
+                option.textContent = role.name;
+                if (role.id === roleId) option.selected = true;
+                select.appendChild(option);
+            });
+        } catch (error) {
+            console.error('Error loading roles for edit:', error);
+            alert('Ошибка загрузки ролей для редактирования');
+        }
+    }
+
+    // Сохранение изменений пользователя
+    async function saveUserChanges(id) {
+        const userNumber = document.getElementById('edit-user-number').value.trim();
+        const chatId = document.getElementById('edit-user-chatId').value.trim();
+        const roleId = document.getElementById('edit-user-role').value;
+
+        if (!userNumber || !chatId || !roleId) {
+            alert('Заполните все поля');
+            return;
+        }
+
+        const userData = {
+            user_number: userNumber,
+            chat_id: parseInt(chatId),
+            role_id: parseInt(roleId)
+        };
+
+        try {
+            const response = await fetch(`${API_CONFIG.BASE_URL}/${id}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(userData)
+            });
+
+            if (response.ok) {
+                document.querySelector('.modal').remove();
+                await loadUsers();
+                alert('Пользователь успешно обновлен!');
+            } else {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+        } catch (error) {
+            console.error('Error updating user:', error);
+            alert('Ошибка при обновлении пользователя: ' + error.message);
+        }
+    }
 
     // Добавление пользователя
     async function addUser() {
@@ -807,31 +834,172 @@ function renderUsers(users) {
         }, 5000);
     }
 
-    // Обработка авторизации
-    function handleLogin() {
-        const loginInput = document.getElementById('login').value;
-        const passwordInput = document.getElementById('password').value;
+    // Загрузка ролей для селекта
+    async function loadRolesForSelect() {
+        try {
+            const response = await fetch(API_CONFIG.ROLES_URL);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
 
-        if (loginInput === ADMIN_CREDENTIALS.login && passwordInput === ADMIN_CREDENTIALS.password) {
-            showContent();
-        } else {
-            alert('Неверные учетные данные!');
+            const roles = await response.json();
+            const select = document.getElementById('user-role');
+
+            // Очищаем существующие опции (кроме первой)
+            select.innerHTML = '<option value="">Выберите роль</option>';
+
+            // Добавляем роли из БД
+            roles.forEach(role => {
+                const option = document.createElement('option');
+                option.value = role.id;
+                option.textContent = role.name;
+                select.appendChild(option);
+            });
+
+        } catch (error) {
+            console.error('Error loading roles for select:', error);
         }
     }
 
-    // Показать основной контент
-    function showContent() {
-        document.getElementById('auth-container').style.display = 'none';
-        document.getElementById('admin-container').classList.remove('hidden');
-        loadUsers(); // Загружаем пользователей при входе
+    // Загрузка ролей для таблицы
+    async function loadRoles() {
+        try {
+            console.log('Loading roles...');
+            const response = await fetch('/api/roles');
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const roles = await response.json();
+            console.log('Roles loaded:', roles);
+            renderRoles(roles);
+
+        } catch (error) {
+            console.error('Error loading roles:', error);
+            showError('Не удалось загрузить роли: ' + error.message);
+
+            const tbody = document.querySelector('#roles-table tbody');
+            tbody.innerHTML = '<tr><td colspan="2" style="text-align: center; color: #dc3545;">Ошибка загрузки данных</td></tr>';
+        }
     }
 
-    // Выход из системы
-    function logout() {
-        document.getElementById('admin-container').classList.add('hidden');
-        document.getElementById('auth-container').style.display = 'flex';
-        document.getElementById('login').value = '';
-        document.getElementById('password').value = '';
+    // Отображение ролей в таблице
+    function renderRoles(roles) {
+        const tbody = document.querySelector('#roles-table tbody');
+        tbody.innerHTML = '';
+
+        if (roles.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="2" style="text-align: center; color: #6c757d;">Нет ролей</td></tr>';
+            return;
+        }
+
+        roles.forEach(role => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${role.name}</td>
+                <td class="action-btns">
+                    <button class="btn btn-sm btn-warning" onclick="editRole(${role.id}, '${role.name}')">
+                        <i class="fas fa-edit"></i> Изменить
+                    </button>
+                    <button class="btn btn-sm btn-danger" onclick="deleteRole(${role.id})">
+                        <i class="fas fa-trash-alt"></i> Удалить
+                    </button>
+                </td>
+            `;
+            tbody.appendChild(row);
+        });
+    }
+
+    // Добавление роли
+    async function addRole() {
+        const roleName = document.getElementById('role-name').value.trim();
+        if (!roleName) {
+            alert('Укажите название роли');
+            return;
+        }
+
+        try {
+            const response = await fetch(API_CONFIG.ROLES_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name: roleName })
+            });
+
+            if (response.ok) {
+                document.getElementById('role-name').value = '';
+                await loadRoles();
+                await loadRolesForSelect();
+                alert('Роль добавлена!');
+            } else {
+                throw new Error(`Ошибка: ${response.status}`);
+            }
+        } catch (error) {
+            console.error('Ошибка:', error);
+            alert('Ошибка при добавлении роли: ' + error.message);
+        }
+    }
+
+    // Редактирование роли
+    async function editRole(id, currentName) {
+        const newName = prompt('Введите новое название роли:', currentName);
+
+        if (!newName || newName.trim() === '') {
+            return;
+        }
+
+        const roleData = {
+            name: newName.trim()
+        };
+
+        try {
+            console.log('Updating role:', roleData);
+            const response = await fetch(`${API_CONFIG.ROLES_URL}/${id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(roleData)
+            });
+
+            if (response.ok) {
+                console.log('Role updated successfully');
+                await loadRoles();
+                await loadRolesForSelect(); // Обновляем селект
+                alert('Роль успешно обновлена!');
+            } else {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+        } catch (error) {
+            console.error('Error updating role:', error);
+            alert('Ошибка при обновлении роли: ' + error.message);
+        }
+    }
+
+    // Удаление роли
+    async function deleteRole(id) {
+        if (!confirm('Вы уверены, что хотите удалить эту роль?')) {
+            return;
+        }
+
+        try {
+            console.log('Deleting role:', id);
+            const response = await fetch(`${API_CONFIG.ROLES_URL}/${id}`, {
+                method: 'DELETE'
+            });
+
+            if (response.ok) {
+                console.log('Role deleted successfully');
+                await loadRoles();
+                await loadRolesForSelect(); // Обновляем селект
+                alert('Роль успешно удалена!');
+            } else {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+        } catch (error) {
+            console.error('Error deleting role:', error);
+            alert('Ошибка при удалении роли: ' + error.message);
+        }
     }
 
     // Переключение между вкладками
@@ -857,205 +1025,12 @@ function renderUsers(users) {
             'roles': 'Управление ролями'
         };
         document.getElementById('page-title').textContent = titleMap[tabName];
-    }
 
-    // Загрузка ролей для селекта
-async function loadRolesForSelect() {
-    try {
-        const response = await fetch(API_CONFIG.ROLES_URL);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+        // Загрузка данных для соответствующей вкладки
+        if (tabName === 'roles') {
+            loadRoles();
         }
-
-        const roles = await response.json();
-        const select = document.getElementById('user-role');
-
-        // Очищаем существующие опции (кроме первой)
-        select.innerHTML = '<option value="">Выберите роль</option>';
-
-        // Добавляем роли из БД
-        roles.forEach(role => {
-            const option = document.createElement('option');
-            option.value = role.id;
-            option.textContent = role.name;
-            select.appendChild(option);
-        });
-
-    } catch (error) {
-        console.error('Error loading roles for select:', error);
     }
-}
-
-// Загрузка ролей для таблицы
-async function loadRoles() {
-    try {
-        console.log('Loading roles...');
-        const response = await fetch('/api/roles');
-
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const roles = await response.json();
-        console.log('Roles loaded:', roles);
-        renderRoles(roles);
-
-    } catch (error) {
-        console.error('Error loading roles:', error);
-        showError('Не удалось загрузить роли: ' + error.message);
-
-        const tbody = document.querySelector('#roles-table tbody');
-        tbody.innerHTML = '<tr><td colspan="2" style="text-align: center; color: #dc3545;">Ошибка загрузки данных</td></tr>';
-    }
-}
-
-// Отображение ролей в таблице
-function renderRoles(roles) {
-    const tbody = document.querySelector('#roles-table tbody');
-    tbody.innerHTML = '';
-
-    if (roles.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="2" style="text-align: center; color: #6c757d;">Нет ролей</td></tr>';
-        return;
-    }
-
-    roles.forEach(role => {
-        const row = document.createElement('tr');
-        row.innerHTML = `
-            <td>${role.name}</td>
-            <td class="action-btns">
-                <button class="btn btn-sm btn-warning" onclick="editRole(${role.id}, '${role.name}')">
-                    <i class="fas fa-edit"></i> Изменить
-                </button>
-                <button class="btn btn-sm btn-danger" onclick="deleteRole(${role.id})">
-                    <i class="fas fa-trash-alt"></i> Удалить
-                </button>
-            </td>
-        `;
-        tbody.appendChild(row);
-    });
-}
-
-    // Заглушки для ролей (пока не реализованы)
-async function addRole() {
-    const roleName = document.getElementById('role-name').value.trim();
-    if (!roleName) {
-        alert('Укажите название роли');
-        return;
-    }
-
-    try {
-        const response = await fetch(API_CONFIG.ROLES_URL, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name: roleName })
-        });
-
-        if (response.ok) {
-            document.getElementById('role-name').value = '';
-            await loadRoles();
-            await loadRolesForSelect();
-            alert('Роль добавлена!');
-        } else {
-            throw new Error(`Ошибка: ${response.status}`);
-        }
-    } catch (error) {
-        console.error('Ошибка:', error);
-        alert('Ошибка при добавлении роли: ' + error.message);
-    }
-}
-
-
-async function editRole(id, currentName) {
-    const newName = prompt('Введите новое название роли:', currentName);
-
-    if (!newName || newName.trim() === '') {
-        return;
-    }
-
-    const roleData = {
-        name: newName.trim()
-    };
-
-    try {
-        console.log('Updating role:', roleData);
-        const response = await fetch(`${API_CONFIG.ROLES_URL}/${id}`, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(roleData)
-        });
-
-        if (response.ok) {
-            console.log('Role updated successfully');
-            await loadRoles();
-            await loadRolesForSelect(); // Обновляем селект
-            alert('Роль успешно обновлена!');
-        } else {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-    } catch (error) {
-        console.error('Error updating role:', error);
-        alert('Ошибка при обновлении роли: ' + error.message);
-    }
-}
-
-// Удаление роли
-async function deleteRole(id) {
-    if (!confirm('Вы уверены, что хотите удалить эту роль?')) {
-        return;
-    }
-
-    try {
-        console.log('Deleting role:', id);
-        const response = await fetch(`${API_CONFIG.ROLES_URL}/${id}`, {
-            method: 'DELETE'
-        });
-
-        if (response.ok) {
-            console.log('Role deleted successfully');
-            await loadRoles();
-            await loadRolesForSelect(); // Обновляем селект
-            alert('Роль успешно удалена!');
-        } else {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-    } catch (error) {
-        console.error('Error deleting role:', error);
-        alert('Ошибка при удалении роли: ' + error.message);
-    }
-}
-
-// 6. ИЗМЕНИТЬ функцию openTab() - добавить загрузку ролей:
-function openTab(tabName) {
-    // Скрыть все вкладки
-    document.querySelectorAll('.tab-content').forEach(tab => {
-        tab.classList.add('hidden');
-    });
-
-    // Показать выбранную вкладку
-    document.getElementById(tabName + '-tab').classList.remove('hidden');
-
-    // Обновить активные пункты меню
-    document.querySelectorAll('.menu-item').forEach(item => {
-        item.classList.remove('active');
-    });
-
-    event.currentTarget.classList.add('active');
-
-    // Обновить заголовок страницы
-    const titleMap = {
-        'users': 'Управление пользователями',
-        'roles': 'Управление ролями'
-    };
-    document.getElementById('page-title').textContent = titleMap[tabName];
-
-    // ДОБАВИТЬ: Загрузка данных для соответствующей вкладки
-    if (tabName === 'roles') {
-        loadRoles();
-    }
-}
 
     function closeModal() {
         document.getElementById('confirm-modal').classList.remove('active');
@@ -1063,7 +1038,7 @@ function openTab(tabName) {
 
     // Инициализация при загрузке страницы
     window.onload = function() {
-        document.getElementById('auth-container').style.display = 'flex';
+        loadUsers();
     };
 </script>
 </body>
