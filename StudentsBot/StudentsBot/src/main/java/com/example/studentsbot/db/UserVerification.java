@@ -25,8 +25,19 @@ public class UserVerification {
         return exists;
     }
 
-    public Optional<Users>getUser(Long chatId) {
+    public Optional<Users> getUser(Long chatId) {
         return userRep.findByChatId(chatId);
+    }
+
+    // Новый метод для проверки роли пользователя
+    public boolean hasRole(Long chatId, String roleName) {
+        return userRep.existsByChatIdAndRole_Name(chatId, roleName);
+    }
+
+    // Новый метод для получения роли пользователя
+    public Optional<String> getUserRole(Long chatId) {
+        return userRep.findByChatId(chatId)
+                .map(user -> user.getRole().getName());
     }
 
     private String normalizePhone(String phone) {

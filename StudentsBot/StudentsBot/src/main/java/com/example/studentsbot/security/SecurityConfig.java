@@ -24,6 +24,8 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/users/**").permitAll()
                         .requestMatchers("/api/roles/**").permitAll() // Разрешаем эндпоинты ролей
+                        .requestMatchers("/api/users/**").hasAnyRole("ADMIN", "BARMEN", "WAITER")
+                        .requestMatchers("/api/roles/**").hasRole("ADMIN")
                         .anyRequest().authenticated()  // Требует аутентификации для всех запросов
                 )
                 .formLogin(form -> form

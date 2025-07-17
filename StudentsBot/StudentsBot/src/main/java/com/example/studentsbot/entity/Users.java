@@ -24,4 +24,9 @@ public class Users {
     @ManyToOne
     @JoinColumn(name = "role_id")
     private Roles role;
+
+    public boolean hasRole(String roleName) {
+        return this.role != null && this.role.getName().equalsIgnoreCase(roleName);
+    }
+
 }

@@ -22,6 +22,8 @@ mvc:
     resources:
       static-locations: classpath:/static/
 
+  logging.file.name: C:Users/Serge/Documents/Bot/logs/bot.log
+  logging.level.root: info
 #logging:
 #  level:
 #    root: DEBUG  # Включает DEBUG-логирование для всего приложения
