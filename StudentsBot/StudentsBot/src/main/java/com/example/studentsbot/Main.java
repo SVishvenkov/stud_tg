@@ -12,16 +12,37 @@ import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 
 @SpringBootApplication
 public class Main {
-    public static void main(String[] args) throws TelegramApiException {
-
+//    public static void main(String[] args) throws TelegramApiException {
+//
+//        ApplicationContext context = SpringApplication.run(Main.class, args);
+//        UserVerification userVerification = context.getBean(UserVerification.class);
+//        TelegramBotProperties telegramBotProperties = new TelegramBotProperties();
+//        StudentsBot bot = new StudentsBot(userVerification,telegramBotProperties);
+//        TelegramBotsApi botsApi = new TelegramBotsApi(DefaultBotSession.class);
+//        try {
+//            botsApi.registerBot(bot);
+//        } catch (TelegramApiException e) {
+//            e.printStackTrace();
+//        }
+//    }
+public static void main(String[] args) {
+    try {
         ApplicationContext context = SpringApplication.run(Main.class, args);
-        UserVerification userVerification = context.getBean(UserVerification.class);
-        StudentsBot bot = new StudentsBot(userVerification);
+
+        // Получаем бота из Spring контекста
+        StudentsBot bot = context.getBean(StudentsBot.class);
+
+        // Регистрируем бота
         TelegramBotsApi botsApi = new TelegramBotsApi(DefaultBotSession.class);
-        try {
-            botsApi.registerBot(bot);
-        } catch (TelegramApiException e) {
-            e.printStackTrace();
-        }
+        botsApi.registerBot(bot);
+
+        System.out.println("Bot started successfully!");
+
+    } catch (TelegramApiException e) {
+        System.err.println("Failed to start bot: " + e.getMessage());
+        e.printStackTrace();
     }
+}
+
+
 }

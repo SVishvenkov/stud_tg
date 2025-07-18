@@ -22,8 +22,20 @@ mvc:
     resources:
       static-locations: classpath:/static/
 
-  logging.file.name: C:Users/Serge/Documents/Bot/logs/bot.log
-  logging.level.root: info
+telegram:
+  bot:
+    token: "7574057992:AAHJy_MnNppVALrz0tIPPEr_zZd8k0OJmSA"
+    username: "korzhovvbot"
+    admin-id: 973792032
+  directories:
+    base-path: "C:Users/Serge/Documents/Bot/directories"
+logging:
+   config: classpath:log4j2.xml
+   level:
+     com.example.studentsbot: DEBUG
+     org.springframework.security: INFO
+     org.telegram: INFO
+     root: INFO
 #logging:
 #  level:
 #    root: DEBUG  # Включает DEBUG-логирование для всего приложения

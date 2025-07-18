@@ -6,6 +6,8 @@ import com.example.studentsbot.entity.Users;
 import lombok.RequiredArgsConstructor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.*;
 import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageText;
@@ -31,10 +33,11 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 
-
+@Component
 public class StudentsBot extends TelegramLongPollingBot {
     private final UserVerification userVerification;
     private final Map<Long, String> lastKnownPaths = new ConcurrentHashMap<>();
+    private final TelegramBotProperties telegramBotProperties;
 
 
     private static final Logger logger = LogManager.getLogger(StudentsBot.class);
@@ -46,10 +49,13 @@ public class StudentsBot extends TelegramLongPollingBot {
     private static final Long ADMIN_ID = 973792032L;
     private DirectoryLister lister;
 
-    public StudentsBot(UserVerification userVerification) {
-        super("7574057992:AAHJy_MnNppVALrz0tIPPEr_zZd8k0OJmSA");
+
+    public StudentsBot(UserVerification userVerification, TelegramBotProperties telegramBotProperties) {
+        super(telegramBotProperties.getBot().getToken());
         this.userVerification = userVerification;
-        this.lister = new DirectoryLister("C:Users/Serge/Documents/Bot/directories");
+        this.telegramBotProperties = telegramBotProperties;
+        this.lister = new DirectoryLister(telegramBotProperties.getDirectories().getBasePath());
+
     }
 
 
@@ -123,7 +129,7 @@ public class StudentsBot extends TelegramLongPollingBot {
                 userChatId
         );
         SendMessage message = new SendMessage();
-        message.setChatId(ADMIN_ID.toString());
+        message.setChatId(telegramBotProperties.getBot().getAdminId().toString());
         message.setText(adminMessage);
         try {
             execute(message);
@@ -476,7 +482,7 @@ public class StudentsBot extends TelegramLongPollingBot {
     }
 
     private String getBasePathForRole(String roleName) {
-        String basePath = "C:/Users/Serge/Documents/Bot/directories";
+        String basePath = telegramBotProperties.getDirectories().getBasePath();
         switch(roleName) {
             case "Admin": return basePath;
             case "Barmen": return basePath + "/Barmen";
@@ -487,11 +493,11 @@ public class StudentsBot extends TelegramLongPollingBot {
 
     @Override
     public String getBotToken() {
-        return "7574057992:AAHJy_MnNppVALrz0tIPPEr_zZd8k0OJmSA";
+        return telegramBotProperties.getBot().getToken();
     }
 
     @Override
     public String getBotUsername() {
-        return "korzhovvbot";
+        return telegramBotProperties.getBot().getUsername();
     }
 }
