@@ -18,7 +18,7 @@ public class DirectoryLister {
 
 
     public DirectoryLister(String rootDirectory) {
-     this.rootPath = Paths.get("C:/Users/vishvenkov.sergej/Documents/dir")
+     this.rootPath = Paths.get("/home/sergey/tg_directories/")
                            .toAbsolutePath()
                            .normalize();
 

@@ -46,7 +46,6 @@ public class StudentsBot extends TelegramLongPollingBot {
     private static final Logger fileAccessLogger = LogManager.getLogger("FILE_ACCESS_LOGGER");
     private static final Logger navigationLogger = LogManager.getLogger("NAVIGATION_LOGGER");
 
-    private static final Long ADMIN_ID = 973792032L;
     private DirectoryLister lister;
 
 
@@ -196,7 +195,6 @@ public class StudentsBot extends TelegramLongPollingBot {
         return new InlineKeyboardMarkup(rows);
     }
 
-
     private void requestPhoneNumber(Long chatId) {
 
         SendMessage message = new SendMessage();
@@ -269,7 +267,6 @@ public class StudentsBot extends TelegramLongPollingBot {
             editDirectoryMenu(chatId, messageId, userName);
         }
 
-
         userActions.info("Перешел в @{} (ID: {}): {}",
                 userName != null ? userName : "unknown",
                 chatId,
@@ -297,16 +294,13 @@ public class StudentsBot extends TelegramLongPollingBot {
         if ("Admin".equals(userRole)) {
             return true;
         }
-
         // Если для папки не требуется определенная роль - доступ разрешен
         if (requiredRole == null) {
             return true;
         }
-
         // Проверяем соответствие роли
         return requiredRole.equals(userRole);
     }
-
 
     private String getRequiredRoleForPath(String path) {
         String normalizedPath = path.replace("\\", "/");
@@ -317,6 +311,8 @@ public class StudentsBot extends TelegramLongPollingBot {
             return "Waiter";
         } else if (normalizedPath.contains("/Admin")) {
             return "Admin";
+        }else if (normalizedPath.contains("/Manager")) {
+            return "Manager";
         }
         return null;
     }
@@ -384,7 +380,6 @@ public class StudentsBot extends TelegramLongPollingBot {
         return List.of(button);
     }
 
-
     private void sendTextMessage(long chatId, String text) {
         try {
             SendMessage message = new SendMessage();
@@ -395,48 +390,6 @@ public class StudentsBot extends TelegramLongPollingBot {
             System.err.println("Ошибка при отправке текстового сообщения: " + e.getMessage());
             e.printStackTrace();
             logger.error("Ошибка при отправке текстового сообщения: ", e.getMessage());
-        }
-    }
-
-    private ReplyKeyboardMarkup createMainMenuKeyboard() {
-        ReplyKeyboardMarkup keyboard = new ReplyKeyboardMarkup();
-        keyboard.setResizeKeyboard(true);  // Автоматически подгонять размер
-        keyboard.setOneTimeKeyboard(false); // Клавиатура не будет скрываться после нажатия
-
-        // Создаем список строк кнопок
-        List<KeyboardRow> rows = new ArrayList<>();
-
-        // Первая (и единственная) строка с кнопкой "Start"
-        KeyboardRow row = new KeyboardRow();
-        row.add("🔄 Start");
-        rows.add(row);
-
-        keyboard.setKeyboard(rows);
-        return keyboard;
-    }
-
-    private void handleAccess(long chatId) {
-        Optional<String> role = userVerification.getUserRole(chatId);
-
-        if (role.isEmpty()) {
-            sendTextMessage(chatId, "❌ Пользователь не найден");
-            return;
-        }
-
-        String directoryPath;
-        switch (role.get()) {
-            case "Admin":
-                directoryPath = "C:/path/to/admin";
-                break;
-            case "BARMEN":
-                directoryPath = "C:/path/to/barmen";
-                break;
-            case "WAITER":
-                directoryPath = "C:/path/to/waiter";
-                break;
-            default:
-                sendTextMessage(chatId, "❌ У вас нет доступа");
-                return;
         }
     }
 
@@ -461,11 +414,13 @@ public class StudentsBot extends TelegramLongPollingBot {
         InlineKeyboardMarkup markup = createDirectoryKeyboard(chatId);
 
         if ("Admin".equals(user.getRole().getName())) {
-            directoryPath = "C:/Users/Serge/Documents/Bot/directories";
+            directoryPath = "/home/sergey/tg_directories";
         } else if ("Barmen".equals(user.getRole().getName())) {
-            directoryPath = "C:/Users/Serge/Documents/Bot/directories/Barmen";
+            directoryPath = "/home/sergey/tg_directories/Barmen";
         } else if ("Waiter".equals(user.getRole().getName())) {
-            directoryPath = "C:/Users/Serge/Documents/Bot/directories/Waiter";
+            directoryPath = "/home/sergey/tg_directories/Waiter";
+        } else if ("Manager".equals(user.getRole().getName())) {
+            directoryPath = "/home/sergey/tg_directories/Manager";
         }
 
         SendMessage message = new SendMessage();
@@ -487,6 +442,7 @@ public class StudentsBot extends TelegramLongPollingBot {
             case "Admin": return basePath;
             case "Barmen": return basePath + "/Barmen";
             case "Waiter": return basePath + "/Waiter";
+            case "Manager": return basePath + "/Manager";
             default: return null;
         }
     }

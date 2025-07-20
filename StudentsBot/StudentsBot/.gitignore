@@ -12,6 +12,7 @@ target/
 *.iws
 *.iml
 *.ipr
+!**/src/main/static/application.yml
 
 ### Eclipse ###
 .apt_generated

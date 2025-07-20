@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://82.202.156.61:5455/sqlstudkort
+    url: jdbc:postgresql://localhost:5455/sqlstudkort
     username: postgres
     password: studkor
     driver-class-name: org.postgresql.Driver
@@ -28,7 +28,7 @@ telegram:
     username: "korzhovvbot"
     admin-id: 973792032
   directories:
-    base-path: "C:Users/Serge/Documents/Bot/directories"
+    base-path: "/home/sergey/tg_directories/"
 logging:
    config: classpath:log4j2.xml
    level:

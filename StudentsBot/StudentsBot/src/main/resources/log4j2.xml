@@ -8,7 +8,7 @@
 
         <!-- Основной файловый лог -->
         <RollingFile name="MainLog"
-                     fileName="logs/bot.log"
+                     fileName="/var/log/tg_log/logs/bot.log/"
                      filePattern="logs/bot-%d{yyyy-MM-dd}.log">
             <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
             <Policies>
@@ -18,7 +18,7 @@
 
         <!-- Лог доступа к файлам -->
         <RollingFile name="FileAccessLog"
-                     fileName="logs/file_access.log"
+                     fileName="/var/log/tg_log/logs/file_access.log/"
                      filePattern="logs/file_access-%d{yyyy-MM-dd}.log">
             <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} - %msg%n"/>
             <Policies>
