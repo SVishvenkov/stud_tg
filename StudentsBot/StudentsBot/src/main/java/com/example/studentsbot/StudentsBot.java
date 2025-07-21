@@ -71,6 +71,7 @@ public class StudentsBot extends TelegramLongPollingBot {
                 String text = message.getText();
                 if (text.equals("/start") || text.equals("Start")) {
                     requestPhoneNumber(chatId);
+                    notifyAdminAboutStart(chatId,userName);
                 }
             } else if (message.hasContact()) {
                 Contact contact = message.getContact();
@@ -105,19 +106,6 @@ public class StudentsBot extends TelegramLongPollingBot {
             logger.debug("Callback from {}: {}",
                     update.getCallbackQuery().getFrom().getId(),
                     update.getCallbackQuery().getData());
-        }
-    }
-
-    private void handleMessage(Update update) {
-        String messageText = update.getMessage().getText();
-        long chatId = update.getMessage().getChatId();
-        String userName = update.getMessage().getFrom().getUserName();
-
-        if (messageText.equals("/start")) {
-            // Уведомление администратора
-            notifyAdminAboutStart(chatId, userName);
-            // Отправка меню пользователю
-
         }
     }
 

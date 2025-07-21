@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5455/sqlstudkort
+    url: jdbc:postgresql://82.202.156.61:5455/sqlstudkort
     username: postgres
     password: studkor
     driver-class-name: org.postgresql.Driver
