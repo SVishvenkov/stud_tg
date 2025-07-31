@@ -1,41 +1,45 @@
 spring:
-  datasource:
-    url: jdbc:postgresql://82.202.156.61:5455/sqlstudkort
-    username: postgres
-    password: studkor
-    driver-class-name: org.postgresql.Driver
-  jpa:
-    show-sql: true
-    hibernate.ddl-auto:  validate
-  liquibase:
-    change-log: classpath:db/changelog/db.changelog-master.xml
-    enabled: true
-    drop-first: false
+  config:
+    location: file:C:/Users/Serge/Dropbox/conf.yml
 
-server:
-  port: 8080
-  address: 0.0.0.0
-
-mvc:
-  static-path-pattern: /static/**
-  web:
-    resources:
-      static-locations: classpath:/static/
-
-telegram:
-  bot:
-    token: "7574057992:AAHJy_MnNppVALrz0tIPPEr_zZd8k0OJmSA"
-    username: "korzhovvbot"
-    admin-id: 973792032
-  directories:
-    base-path: "/home/sergey/tg_directories/"
-logging:
-   config: classpath:log4j2.xml
-   level:
-     com.example.studentsbot: DEBUG
-     org.springframework.security: INFO
-     org.telegram: INFO
-     root: INFO
+#debug: true
+#  datasource:
+#    url: jdbc:postgresql://82.202.156.61:5455/sqlstudkort
+#    username: postgres
+#    password: studkor
+#    driver-class-name: org.postgresql.Driver
+#  jpa:
+#    show-sql: true
+#    hibernate.ddl-auto:  validate
+#  liquibase:
+#    change-log: classpath:db/changelog/db.changelog-master.xml
+#    enabled: true
+#    drop-first: false
+#
+#server:
+#  port: 8080
+#  address: 0.0.0.0
+#
+#mvc:
+#  static-path-pattern: /static/**
+#  web:
+#    resources:
+#      static-locations: classpath:/static/
+#
+#telegram:
+#  bot:
+#    token: "7574057992:AAHJy_MnNppVALrz0tIPPEr_zZd8k0OJmSA"
+#    username: "korzhovvbot"
+#    admin-id: 973792032
+#  directories:
+#    base-path: "/home/sergey/tg_directories/"
+#logging:
+#   config: classpath:log4j2.xml
+#   level:
+#     com.example.studentsbot: DEBUG
+#     org.springframework.security: INFO
+#     org.telegram: INFO
+#     root: INFO
 #logging:
 #  level:
 #    root: DEBUG  # Включает DEBUG-логирование для всего приложения
