@@ -6,10 +6,13 @@ import com.example.studentsbot.entity.Users;
 import lombok.RequiredArgsConstructor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.text.PDFTextStripper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.*;
+import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageReplyMarkup;
 import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageText;
 import org.telegram.telegrambots.meta.api.objects.Contact;
 import org.telegram.telegrambots.meta.api.objects.InputFile;
@@ -38,6 +41,8 @@ public class StudentsBot extends TelegramLongPollingBot {
     private final UserVerification userVerification;
     private final Map<Long, String> lastKnownPaths = new ConcurrentHashMap<>();
     private final TelegramBotProperties telegramBotProperties;
+    private final Map<Long, Integer> lastMenuMessageId = new ConcurrentHashMap<>();
+    private final Map<Long, Boolean> menuPromptSent = new ConcurrentHashMap<>();
 
 
     private static final Logger logger = LogManager.getLogger(StudentsBot.class);
@@ -49,11 +54,12 @@ public class StudentsBot extends TelegramLongPollingBot {
     private DirectoryLister lister;
 
 
-    public StudentsBot(UserVerification userVerification, TelegramBotProperties telegramBotProperties) {
+    @Autowired
+    public StudentsBot(UserVerification userVerification, TelegramBotProperties telegramBotProperties, DirectoryLister lister) {
         super(telegramBotProperties.getBot().getToken());
         this.userVerification = userVerification;
         this.telegramBotProperties = telegramBotProperties;
-        this.lister = new DirectoryLister(telegramBotProperties.getDirectories().getBasePath());
+        this.lister = lister;/*new DirectoryLister(telegramBotProperties.getDirectories().getBasePath());*/
 
     }
 
@@ -71,14 +77,16 @@ public class StudentsBot extends TelegramLongPollingBot {
                 String text = message.getText();
                 if (text.equals("/start") || text.equals("Start")) {
                     requestPhoneNumber(chatId);
-                    notifyAdminAboutStart(chatId,userName);
+                    notifyAdminAboutStart(chatId, userName);
+                } else if (text.equals("📁 Меню")) {
+                    sendPrivateDirectoryMenu(chatId, userName);
                 }
             } else if (message.hasContact()) {
                 Contact contact = message.getContact();
                 String phoneNumber = contact.getPhoneNumber();
                 if (userVerification.isUserValid(chatId, phoneNumber)) {
                     try {
-                        authLogger.info(phoneNumber,userName,"Authorization");
+                        authLogger.info(phoneNumber, userName, "Authorization");
                         execute(SendMessage.builder()
                                 .chatId(chatId)
                                 .text("✅ Доступ разрешен")
@@ -95,7 +103,7 @@ public class StudentsBot extends TelegramLongPollingBot {
                                 .text("❌ Доступ запрещен\nОбратитесь к администратору")
                                 .replyMarkup(new ReplyKeyboardRemove(true))
                                 .build());
-                        authLogger.info(phoneNumber,userName,"No Authorization");
+                        authLogger.info(phoneNumber, userName, "No Authorization");
                     } catch (TelegramApiException e) {
                         logger.error("Ошибка при отправке сообщения", e);
                     }
@@ -125,6 +133,22 @@ public class StudentsBot extends TelegramLongPollingBot {
             e.printStackTrace();
         }
         userActions.info("Запустил" + userName + userChatId);
+    }
+
+    private void hideMenuIfPresent(long chatId) {
+        Integer menuMsgId = lastMenuMessageId.get(chatId);
+        if (menuMsgId == null) return;
+
+        EditMessageReplyMarkup edit = new EditMessageReplyMarkup();
+        edit.setChatId(String.valueOf(chatId));
+        edit.setMessageId(menuMsgId);
+        edit.setReplyMarkup(null); // прячет inline-клавиатуру
+        try {
+            execute(edit);
+        } catch (TelegramApiException e) {
+            logger.warn("Не удалось скрыть меню: {}", e.getMessage());
+        }
+        lastMenuMessageId.remove(chatId);
     }
 
     private void editDirectoryMenu(long chatId, int messageId, String userName) {
@@ -163,6 +187,13 @@ public class StudentsBot extends TelegramLongPollingBot {
 
         Users user = userOptional.get();
         List<List<InlineKeyboardButton>> rows = new ArrayList<>();
+
+        List<InlineKeyboardButton> closeRow = new ArrayList<>();
+        closeRow.add(InlineKeyboardButton.builder()
+                .text("❌ Закрыть меню")
+                .callbackData("close_menu")
+                .build());
+        rows.add(closeRow);
 
         if (!lister.isRootDirectory()) {
             rows.add(createButtonRow("⬆️ На уровень выше", ".."));
@@ -212,6 +243,35 @@ public class StudentsBot extends TelegramLongPollingBot {
         }
     }
 
+    private void sendMenuButton(long chatId, boolean forceText) {
+        ReplyKeyboardMarkup keyboardMarkup = new ReplyKeyboardMarkup();
+        keyboardMarkup.setResizeKeyboard(true);
+        keyboardMarkup.setOneTimeKeyboard(false);
+        KeyboardRow row = new KeyboardRow();
+        row.add(new KeyboardButton("📁 Меню"));
+        keyboardMarkup.setKeyboard(List.of(row));
+
+        String text;
+        if (forceText || !Boolean.TRUE.equals(menuPromptSent.get(chatId))) {
+            text = "Нажмите кнопку, чтобы открыть меню";
+            menuPromptSent.put(chatId, true);
+        } else {
+            // Без видимого текста: можно использовать невидимый символ, чтобы Telegram принял сообщение
+            text = "\u200B"; // обязательно именно "\u200B", а не "\\u200B"
+        }
+
+        SendMessage message = SendMessage.builder()
+                .chatId(String.valueOf(chatId))
+                .text(text)
+                .replyMarkup(keyboardMarkup)
+                .build();
+        try {
+            execute(message);
+        } catch (TelegramApiException e) {
+            logger.error("Ошибка при отправке кнопки меню: " + e.getMessage());
+        }
+    }
+
     private void handleCallbackQuery(Update update) {
         String callbackData = update.getCallbackQuery().getData();
         long chatId = update.getCallbackQuery().getMessage().getChatId();
@@ -255,6 +315,20 @@ public class StudentsBot extends TelegramLongPollingBot {
             editDirectoryMenu(chatId, messageId, userName);
         }
 
+        if ("close_menu".equals(callbackData)) {
+            EditMessageReplyMarkup editMarkup = new EditMessageReplyMarkup();
+            editMarkup.setChatId(String.valueOf(chatId));
+            editMarkup.setMessageId(messageId);
+            editMarkup.setReplyMarkup(null); // убирает клавиатуру
+
+            try {
+                execute(editMarkup);
+            } catch (TelegramApiException e) {
+                logger.error("Ошибка при закрытии меню: " + e.getMessage());
+            }
+            return;
+        }
+
         userActions.info("Перешел в @{} (ID: {}): {}",
                 userName != null ? userName : "unknown",
                 chatId,
@@ -270,7 +344,7 @@ public class StudentsBot extends TelegramLongPollingBot {
             editDirectoryMenu(chatId, messageId, userName);
         } else if (callbackData.startsWith("file:")) {
             String fileName = callbackData.substring(5);
-            sendFile(chatId, fileName);
+            sendFile(String.valueOf(chatId), fileName);
         }
     }
 
@@ -299,64 +373,101 @@ public class StudentsBot extends TelegramLongPollingBot {
             return "Waiter";
         } else if (normalizedPath.contains("/Admin")) {
             return "Admin";
-        }else if (normalizedPath.contains("/Manager")) {
+        } else if (normalizedPath.contains("/Manager")) {
             return "Manager";
         }
         return null;
     }
 
-    private void sendFile(long chatId, String fileName) {
+    private void sendFile(String chatId, String fileName) {
+        long parsedChatId = Long.parseLong(chatId);
+        hideMenuIfPresent(parsedChatId);
         fileAccessLogger.info("File request by {}: {}", chatId, fileName);
         try {
-            File fileToSend = new File(lister.getCurrentPath(), fileName);
-
-            // Проверка существования файла
-            if (!fileToSend.exists()) {
-                sendTextMessage(chatId, "Файл не найден: " + fileName);
-                logger.error("Файл не найден: " + fileName);
+            DirectoryLister.FileContent fileContent = lister.getFileContent(fileName);
+            if (fileContent == null) {
+                sendTextMessage(Long.parseLong(chatId), "❌ Файл не найден или недоступен");
                 return;
             }
 
-            // Проверка, что это не директория
-            if (fileToSend.isDirectory()) {
-                sendTextMessage(chatId, "Это директория, а не файл: " + fileName);
-                return;
+            switch (fileContent.getContentType()) {
+                case TEXT:
+                    sendTextContent(Long.parseLong(chatId), fileContent);
+                    break;
+                case IMAGE:
+                    execute(new SendPhoto(chatId, new InputFile(new File(fileContent.getContent()))));
+                    break;
+                case VIDEO:
+                    SendVideo video = new SendVideo();
+                    video.setChatId(chatId);
+                    video.setVideo(new InputFile(new File(fileContent.getContent())));
+                    video.setSupportsStreaming(true);
+                    video.setProtectContent(true);
+                    execute(video);
+                    break;
+                case AUDIO:
+                    execute(new SendAudio(chatId, new InputFile(new File(fileContent.getContent()))));
+                    break;
+                case FILE:
+                default:
+                    if (fileContent.getContent().endsWith(".pdf")) {
+                        sendPdfAsText(chatId, new File(fileContent.getContent()));
+                    } else {
+                        execute(new SendDocument(chatId, new InputFile(new File(fileContent.getContent()))));
+                    }
+                    break;
+            }
+        } catch (IOException e) {
+            sendTextMessage(Long.parseLong(chatId), "❌ Ошибка чтения файла: " + e.getMessage());
+            logger.error("Ошибка чтения файла", e);
+        } catch (TelegramApiException e) {
+            sendTextMessage(Long.parseLong(chatId), "❌ Ошибка отправки файла: " + e.getMessage());
+            logger.error("Ошибка отправки файла", e);
+        }
+    }
+
+    private void sendTextContent(long chatId, DirectoryLister.FileContent fileContent) throws TelegramApiException {
+        hideMenuIfPresent(chatId);
+        String content = fileContent.getContent();
+        if (content.length() > 4000) {
+            for (int i = 0; i < content.length(); i += 4000) {
+                String part = content.substring(i, Math.min(i + 4000, content.length()));
+                execute(SendMessage.builder()
+                        .chatId(chatId)
+                        .text("📄 " + fileContent.getFileName() + " (часть " + (i / 4000 + 1) + "):\n" + part)
+                        .protectContent(true)
+                        .build());
+            }
+        } else {
+            execute(SendMessage.builder()
+                    .chatId(chatId)
+                    .text("📄 " + fileContent.getFileName() + ":\n" + content)
+                    .protectContent(true)
+                    .build());
+        }
+    }
+
+    private void sendPdfAsText(String chatId, File pdfFile) {
+        hideMenuIfPresent(Long.parseLong(chatId));
+        try (PDDocument document = PDDocument.load(pdfFile)) {
+            PDFTextStripper stripper = new PDFTextStripper();
+            String text = stripper.getText(document);
+
+            if (text.length() > 4000) {
+                text = text.substring(0, 4000) + "\n\n... (файл слишком большой, показаны первые 4000 символов)";
             }
 
-            // Проверка размера файла
-            if (fileToSend.length() == 0) {
-                sendTextMessage(chatId, "Файл пустой: " + fileName);
-                return;
+            execute(SendMessage.builder()
+                    .chatId(chatId)
+                    .text("📄 PDF-текст из " + pdfFile.getName() + ":\n" + text)
+                    .protectContent(true)
+                    .build());
+        } catch (Exception e) {
+            try {
+                execute(new SendDocument(chatId.toString(), new InputFile(pdfFile)));
+            } catch (TelegramApiException ex) {
+                sendTextMessage(Long.parseLong(chatId), "❌ Ошибка обработки PDF: " + ex.getMessage());
             }
-
-            String mimeType = Files.probeContentType(fileToSend.toPath());
-
-            if (mimeType == null) {
-                // Стандартная отправка как документ
-                execute(new SendDocument(Long.toString(chatId), new InputFile(fileToSend)));
-                return;
-            }
-
-            // Оптимизация для разных типов файлов
-            if (mimeType.startsWith("image/")) {
-                execute(new SendPhoto(Long.toString(chatId), new InputFile(fileToSend)));
-                logger.info("Sending file {} to chat {}", fileName, chatId);
-            } else if (mimeType.startsWith("video/")) {
-                execute(new SendVideo(Long.toString(chatId), new InputFile(fileToSend)));
-                logger.info("Sending file {} to chat {}", fileName, chatId);
-            } else if (mimeType.startsWith("audio/")) {
-                execute(new SendAudio(Long.toString(chatId), new InputFile(fileToSend)));
-                logger.info("Sending file {} to chat {}", fileName, chatId);
-            } else {
-                execute(new SendDocument(Long.toString(chatId), new InputFile(fileToSend)));
-                logger.info("Sending file {} to chat {}", fileName, chatId);
-            }
-            fileAccessLogger.debug("File sent successfully: {}", fileName);
-
-        } catch (IOException | TelegramApiException e) {
-            sendTextMessage(chatId, "Ошибка отправки файла: " + e.getMessage());
-            logger.error("Failed to send file {}: {}", fileName, e.getMessage());
-            e.printStackTrace();
         }
     }
 
@@ -373,6 +484,7 @@ public class StudentsBot extends TelegramLongPollingBot {
             SendMessage message = new SendMessage();
             message.setChatId(String.valueOf(chatId));
             message.setText(text);
+            message.setProtectContent(true);
             execute(message);
         } catch (TelegramApiException e) {
             System.err.println("Ошибка при отправке текстового сообщения: " + e.getMessage());
@@ -401,7 +513,7 @@ public class StudentsBot extends TelegramLongPollingBot {
         this.lister = new DirectoryLister(directoryPath);
         InlineKeyboardMarkup markup = createDirectoryKeyboard(chatId);
 
-        if ("Admin".equals(user.getRole().getName())) {
+/*        if ("Admin".equals(user.getRole().getName())) {
             directoryPath = "/home/sergey/tg_directories";
         } else if ("Barmen".equals(user.getRole().getName())) {
             directoryPath = "/home/sergey/tg_directories/Barmen";
@@ -409,9 +521,37 @@ public class StudentsBot extends TelegramLongPollingBot {
             directoryPath = "/home/sergey/tg_directories/Waiter";
         } else if ("Manager".equals(user.getRole().getName())) {
             directoryPath = "/home/sergey/tg_directories/Manager";
-        }
+        }*/
 
-        SendMessage message = new SendMessage();
+
+        String text = "Доступные файлы";
+        Integer existingMessageId = lastMenuMessageId.get(chatId);
+        try {
+            if (existingMessageId != null) {
+                // редактируем предыдущее меню
+                EditMessageText edit = new EditMessageText();
+                edit.setChatId(String.valueOf(chatId));
+                edit.setMessageId(existingMessageId);
+                edit.setText(text);
+                edit.setReplyMarkup(markup);
+                execute(edit);
+            } else {
+                // отправляем новое и запоминаем id
+                SendMessage message = SendMessage.builder()
+                        .chatId(String.valueOf(chatId))
+                        .text(text)
+                        .replyMarkup(markup)
+                        .build();
+                Message sent = execute(message);
+                lastMenuMessageId.put(chatId, sent.getMessageId());
+            }
+            // после успешной авторизации показываем кнопку вызова меню, чтобы можно было восстановить
+            sendMenuButton(chatId,false);
+        } catch (TelegramApiException e) {
+            logger.error("Ошибка при отправке/обновлении меню директории", e);
+            logger.error("Failed to send or edit menu to {}: {}", chatId, e.getMessage());
+        }
+        /*SendMessage message = new SendMessage();
         message.setChatId(String.valueOf(chatId));
         message.setText("Доступные файлы");
         message.setReplyMarkup(markup);
@@ -421,17 +561,22 @@ public class StudentsBot extends TelegramLongPollingBot {
         } catch (TelegramApiException e) {
             logger.error("Ошибка при отправке меню директории", e);
             logger.error("Failed to send menu to {}: {}", chatId, e.getMessage());
-        }
+        }*/
     }
 
     private String getBasePathForRole(String roleName) {
         String basePath = telegramBotProperties.getDirectories().getBasePath();
-        switch(roleName) {
-            case "Admin": return basePath;
-            case "Barmen": return basePath + "/Barmen";
-            case "Waiter": return basePath + "/Waiter";
-            case "Manager": return basePath + "/Manager";
-            default: return null;
+        switch (roleName) {
+            case "Admin":
+                return basePath;
+            case "Barmen":
+                return basePath + "/Barmen";
+            case "Waiter":
+                return basePath + "/Waiter";
+            case "Manager":
+                return basePath + "/Manager";
+            default:
+                return null;
         }
     }
 

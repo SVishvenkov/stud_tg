@@ -1,24 +1,31 @@
 package com.example.studentsbot.directory;
 
 import com.example.studentsbot.StudentsBot;
+import com.example.studentsbot.TelegramBotProperties;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Component
 public class DirectoryLister {
     private static final Logger logger = LogManager.getLogger(StudentsBot.class);
     private Path currentPath;
     private final Path rootPath;
+//    private final TelegramBotProperties properties;
 
 
-    public DirectoryLister(String rootDirectory) {
-     this.rootPath = Paths.get("/home/sergey/tg_directories/")
+    public DirectoryLister(@Value("${telegram.directories.base_path}") String rootDirectory) {
+     this.rootPath = Paths.get(rootDirectory)
                            .toAbsolutePath()
                            .normalize();
 
@@ -27,7 +34,6 @@ public class DirectoryLister {
         if (!dir.exists()) {
             System.err.println("Папка не существует! Создаём...");
             logger.error("Папка не существует! Создаём...");
-
             dir.mkdirs();
         }
         if (!dir.canRead()) {
@@ -37,10 +43,6 @@ public class DirectoryLister {
 
         this.currentPath = this.rootPath;
         System.out.println("Успешно инициализирован путь: " + this.rootPath);
-    }
-
-    public DirectoryLister() {
-        this(".");
     }
 
     public String getCurrentPath() {
@@ -95,6 +97,74 @@ public class DirectoryLister {
                 })
                 .collect(Collectors.toList());
     }
+
+    public FileContent getFileContent(String fileName) throws IOException {
+        Path filePath = currentPath.resolve(fileName).normalize();
+        File file = filePath.toFile();
+
+        String mimeType = Files.probeContentType(filePath);
+        if (mimeType == null) {
+            mimeType = getMimeType(file.getName());
+        }
+
+
+        if (mimeType.startsWith("text/") || mimeType.equals("application/json")) {
+            String content = Files.readString(filePath);
+            return new FileContent(file.getName(), content, FileContent.ContentType.TEXT);
+        } else if (mimeType.startsWith("image/")) {
+            return new FileContent(file.getName(), filePath.toString(), FileContent.ContentType.IMAGE);
+        } else if (mimeType.startsWith("video/")) {
+            return new FileContent(file.getName(), filePath.toString(), FileContent.ContentType.VIDEO);
+        } else if (mimeType.startsWith("audio/")) {
+            return new FileContent(file.getName(), filePath.toString(), FileContent.ContentType.AUDIO);
+        } else {
+            return new FileContent(file.getName(), filePath.toString(), FileContent.ContentType.FILE);
+        }
+    }
+
+    public static class FileContent {
+        private final String fileName;
+        private final String content;
+        private final ContentType contentType;
+
+        public FileContent(String fileName, String content, ContentType contentType) {
+            this.fileName = fileName;
+            this.content = content;
+            this.contentType = contentType;
+        }
+
+        public String getFileName() { return fileName; }
+        public String getContent() { return content; }
+        public ContentType getContentType() { return contentType; }
+
+        public enum ContentType {
+            TEXT, IMAGE, VIDEO, AUDIO, FILE
+        }
+    }
+
+    private String getMimeType(String fileName) {
+        String extension = fileName.substring(fileName.lastIndexOf('.') + 1).toLowerCase();
+        switch (extension) {
+            case "txt": return "text/plain";
+            case "pdf": return "application/pdf";
+            case "jpg": case "jpeg": return "image/jpeg";
+            case "png": return "image/png";
+            case "gif": return "image/gif";
+            case "mp4": return "video/mp4";
+            case "avi": return "video/x-msvideo";
+            case "mov": return "video/quicktime";
+            case "mp3": return "audio/mpeg";
+            case "wav": return "audio/wav";
+            case "doc": return "application/msword";
+            case "docx": return "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
+            case "json": return "application/json";
+            case "csv": return "text/csv";
+            case "xml": return "application/xml";
+            default: return "application/octet-stream";
+        }
+    }
+
+
     private String getEmojiForFile(File file) {
         if (file.isDirectory()) {
             return "📁";

@@ -1,0 +1,22 @@
+2025-08-01 20:22:34 - User 7201674426 accessing dir: Admin
+2025-08-01 20:22:37 - File request by 7201674426: Main.java
+2025-08-01 20:22:49 - File request by 7201674426: Как следить за всеми.rtf
+2025-08-01 20:51:18 - User 7201674426 accessing dir: Barmen
+2025-08-01 20:51:20 - User 7201674426 accessing dir: Waiter
+2025-08-01 20:51:22 - User 7201674426 accessing dir: testDir
+2025-08-01 20:51:24 - User 7201674426 accessing dir: Barmen
+2025-08-01 20:51:26 - User 7201674426 accessing dir: Admin
+2025-08-01 20:51:28 - File request by 7201674426: Как следить за всеми.rtf
+2025-08-01 20:53:08 - User 7201674426 accessing dir: Barmen
+2025-08-01 20:53:10 - File request by 7201674426: Еще один важный файл.pdf
+2025-08-01 20:54:52 - User 7201674426 accessing dir: Waiter
+2025-08-01 20:54:54 - User 7201674426 accessing dir: testDir
+2025-08-01 20:54:55 - File request by 7201674426: video5206518957195951488.mp4
+2025-08-01 21:16:28 - User 7201674426 accessing dir: Barmen
+2025-08-01 21:16:31 - File request by 7201674426: Еще один важный файл.pdf
+2025-08-01 21:33:54 - User 7201674426 accessing dir: Admin
+2025-08-01 21:34:01 - User 7201674426 accessing dir: Barmen
+2025-08-01 21:34:04 - User 7201674426 accessing dir: Waiter
+2025-08-01 21:34:06 - User 7201674426 accessing dir: testDir
+2025-08-01 21:34:07 - File request by 7201674426: video5206518957195951488.mp4
+2025-08-01 21:34:20 - User 7201674426 accessing dir: Admin
