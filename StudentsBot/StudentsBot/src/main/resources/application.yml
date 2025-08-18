@@ -1,6 +1,6 @@
 spring:
   config:
-    location: file:C:/Users/Serge/Dropbox/conf.yml
+    location: file:/home/sergey/conf.yml
 
 #debug: true
 #  datasource:

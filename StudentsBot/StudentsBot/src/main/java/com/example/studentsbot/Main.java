@@ -27,7 +27,8 @@ public static void main(String[] args) {
     try {
         // Инициализируем SpringApplication с настройкой внешнего файла конфигурации
         SpringApplication app = new SpringApplication(Main.class);
-        String configLocation = "file:C:/Users/Serge/Dropbox/conf.yml";
+//        String configLocation = "file:C:/Users/Serge/Dropbox/conf.yml";
+        String configLocation = "file:/home/studuser/conf.yml";
         app.setDefaultProperties(Map.of("spring.config.location", configLocation /*"debug", "true"*/));
 
         // Запускаем приложение и получаем контекст

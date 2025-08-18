@@ -21,7 +21,6 @@ public class DirectoryLister {
     private static final Logger logger = LogManager.getLogger(StudentsBot.class);
     private Path currentPath;
     private final Path rootPath;
-//    private final TelegramBotProperties properties;
 
 
     public DirectoryLister(@Value("${telegram.directories.base_path}") String rootDirectory) {
@@ -66,7 +65,7 @@ public class DirectoryLister {
         }
     }
 
-    public List<String> getSubDirectories() {
+/*    public List<String> getSubDirectories() {
         File currentDir = currentPath.toFile();
         System.out.println("Чтение папок в: " + currentDir.getAbsolutePath());
 
@@ -80,7 +79,7 @@ public class DirectoryLister {
         return Arrays.stream(dirs)
                 .map(File::getName)
                 .collect(Collectors.toList());
-    }
+    }*/
 
     public List<DirectoryItem> getDirectoryContents() {
         File currentDir = currentPath.toFile();
@@ -93,7 +92,15 @@ public class DirectoryLister {
         return Arrays.stream(items)
                 .map(file -> {
                     String emoji = getEmojiForFile(file);
-                    return new DirectoryItem(file.getName(), emoji, file.isDirectory());
+                    boolean isTest = false;
+                    if (!file.isDirectory() && file.getName().toLowerCase().endsWith(".txt")) {
+                        Path p = file.toPath();
+                        if (com.example.studentsbot.quiz.TestParser.isLikelyTest(p)) {
+                            isTest = true;
+                            emoji = "📝";
+                        }
+                    }
+                    return new DirectoryItem(file.getName(), emoji, file.isDirectory(), isTest);
                 })
                 .collect(Collectors.toList());
     }
@@ -188,15 +195,18 @@ public class DirectoryLister {
         private final String name;
         private final String emoji;
         private final boolean isDirectory;
+        private final boolean isTest;
 
-        public DirectoryItem(String name, String emoji, boolean isDirectory) {
+        public DirectoryItem(String name, String emoji, boolean isDirectory, boolean isTest) {
             this.name = name;
             this.emoji = emoji;
             this.isDirectory = isDirectory;
+            this.isTest = isTest;
         }
         public String getName() { return name; }
         public String getEmoji() { return emoji; }
         public boolean isDirectory() { return isDirectory; }
+        public boolean isTest() {return isTest;}
     }
 
     public void resetToRoot() {

@@ -1,0 +1,1248 @@
+2025-08-11 10:25:51.084 [main] ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Config data resource 'file [\home\sergey\conf.yml]' via location 'file:/home/sergey//conf.yml' does not exist
+
+Action:
+
+Check that the value 'file:/home/sergey//conf.yml' is correct, or prefix it with 'optional:'
+
+2025-08-11 10:50:06.973 [main] INFO  com.example.studentsbot.Main - Starting Main using Java 23.0.2 with PID 3312 (C:\Users\Serge\Documents\Bot\Новая папка\stud_tg_tests\StudentsBot\StudentsBot\target\classes started by Serge in C:\Users\Serge\Documents\Bot\Новая папка\stud_tg_tests)
+2025-08-11 10:50:07.037 [main] DEBUG com.example.studentsbot.Main - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-08-11 10:50:07.043 [main] INFO  com.example.studentsbot.Main - No active profile set, falling back to 1 default profile: "default"
+2025-08-11 10:50:10.638 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11 10:50:10.857 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 189 ms. Found 2 JPA repository interfaces.
+2025-08-11 10:50:12.887 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-08-11 10:50:12.929 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2025-08-11 10:50:12.934 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-11 10:50:12.935 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-08-11 10:50:13.227 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-11 10:50:13.233 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5677 ms
+2025-08-11 10:50:13.957 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-11 10:50:14.682 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@586843bc
+2025-08-11 10:50:14.686 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-11 10:50:15.268 [main] INFO  liquibase.database - Set default schema name to public
+2025-08-11 10:50:17.242 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-08-11 10:50:17.977 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2025-08-11 10:50:18.019 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-08-11 10:50:18.076 [main] INFO  liquibase.util - UPDATE SUMMARY
+2025-08-11 10:50:18.077 [main] INFO  liquibase.util - Run:                          0
+2025-08-11 10:50:18.077 [main] INFO  liquibase.util - Previously run:               4
+2025-08-11 10:50:18.077 [main] INFO  liquibase.util - Filtered out:                 0
+2025-08-11 10:50:18.078 [main] INFO  liquibase.util - -------------------------------
+2025-08-11 10:50:18.078 [main] INFO  liquibase.util - Total change sets:            4
+2025-08-11 10:50:18.081 [main] INFO  liquibase.util - Update summary generated
+2025-08-11 10:50:18.085 [main] INFO  liquibase.command - Command execution complete
+2025-08-11 10:50:19.966 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-11 10:50:20.595 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-08-11 10:50:20.785 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-08-11 10:50:22.404 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-11 10:50:22.870 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-11 10:50:24.912 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-11 10:50:25.113 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 10:50:27.051 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-11 10:50:27.135 [main] INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-08-11 10:50:27.990 [main] INFO  org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-08-11 10:50:28.528 [main] INFO  org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-08-11 10:50:29.221 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2025-08-11 10:50:29.284 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-08-11 10:50:29.308 [main] INFO  com.example.studentsbot.Main - Started Main in 24.437 seconds (process running for 53.407)
+2025-08-11 10:52:23.744 [SpringApplicationShutdownHook] INFO  org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-11 10:52:23.774 [tomcat-shutdown] INFO  org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-08-11 10:52:23.792 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 10:52:23.808 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-08-11 10:52:23.834 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-08-11 10:52:38.935 [main] INFO  com.example.studentsbot.Main - Starting Main using Java 23.0.2 with PID 4964 (C:\Users\Serge\Documents\Bot\Новая папка\stud_tg_tests\StudentsBot\StudentsBot\target\classes started by Serge in C:\Users\Serge\Documents\Bot\Новая папка\stud_tg_tests)
+2025-08-11 10:52:39.006 [main] DEBUG com.example.studentsbot.Main - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-08-11 10:52:39.010 [main] INFO  com.example.studentsbot.Main - No active profile set, falling back to 1 default profile: "default"
+2025-08-11 10:52:42.416 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11 10:52:42.600 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 159 ms. Found 2 JPA repository interfaces.
+2025-08-11 10:52:44.566 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-08-11 10:52:44.621 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2025-08-11 10:52:44.630 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-11 10:52:44.632 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-08-11 10:52:44.988 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-11 10:52:44.999 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5723 ms
+2025-08-11 10:52:45.658 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-11 10:52:46.455 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7196a8f1
+2025-08-11 10:52:46.460 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-11 10:52:47.005 [main] INFO  liquibase.database - Set default schema name to public
+2025-08-11 10:52:48.546 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-08-11 10:52:49.109 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2025-08-11 10:52:49.154 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-08-11 10:52:49.215 [main] INFO  liquibase.util - UPDATE SUMMARY
+2025-08-11 10:52:49.215 [main] INFO  liquibase.util - Run:                          0
+2025-08-11 10:52:49.216 [main] INFO  liquibase.util - Previously run:               4
+2025-08-11 10:52:49.216 [main] INFO  liquibase.util - Filtered out:                 0
+2025-08-11 10:52:49.217 [main] INFO  liquibase.util - -------------------------------
+2025-08-11 10:52:49.217 [main] INFO  liquibase.util - Total change sets:            4
+2025-08-11 10:52:49.220 [main] INFO  liquibase.util - Update summary generated
+2025-08-11 10:52:49.225 [main] INFO  liquibase.command - Command execution complete
+2025-08-11 10:52:51.064 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-11 10:52:51.242 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-08-11 10:52:51.421 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-08-11 10:52:52.321 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-11 10:52:53.203 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-11 10:52:54.914 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-11 10:52:55.121 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 10:52:56.872 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-11 10:52:56.946 [main] INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-08-11 10:52:57.715 [main] INFO  org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-08-11 10:52:58.136 [main] INFO  org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-08-11 10:52:58.760 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2025-08-11 10:52:58.818 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-08-11 10:52:58.843 [main] INFO  com.example.studentsbot.Main - Started Main in 21.493 seconds (process running for 24.616)
+2025-08-11 10:53:47.787 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Message from 7201674426: /start
+2025-08-11 10:53:48.613 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - ЗапустилTsehSerg7201674426
+2025-08-11 10:53:51.713 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Message from 7201674426: null
+2025-08-11 10:53:51.792 [korzhovvbot Telegram Executor] INFO  com.example.studentsbot.db.UserVerification - Checking access: chatId=7201674426, normalizedPhone=79312610989
+2025-08-11 10:53:51.848 [korzhovvbot Telegram Executor] INFO  com.example.studentsbot.db.UserVerification - Result: true
+2025-08-11 10:53:51.849 [korzhovvbot Telegram Executor] INFO  AUTH_LOGGER - +79312610989
+2025-08-11 10:55:03.397 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Message from 7201674426: 📁 Меню
+2025-08-11 10:55:03.720 [korzhovvbot Telegram Executor] WARN  com.example.studentsbot.StudentsBot - ❗Не удалось отредактировать старое меню для пользователя 7201674426. Причина: Error executing org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageText query: [400] Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+2025-08-11 10:56:15.292 [http-nio-0.0.0.0-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-11 10:56:15.292 [http-nio-0.0.0.0-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-08-11 10:56:15.292 [http-nio-0.0.0.0-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2025-08-11 10:56:21.583 [http-nio-0.0.0.0-8080-exec-8] INFO  com.example.studentsbot.services.UserCRUDServices - Get All
+2025-08-11 11:04:20.541 [SpringApplicationShutdownHook] INFO  org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-11 11:04:20.573 [tomcat-shutdown] INFO  org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-08-11 11:04:20.583 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 11:04:20.588 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-08-11 11:04:20.602 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-08-11 11:04:37.117 [main] INFO  com.example.studentsbot.Main - Starting Main using Java 23.0.2 with PID 3196 (C:\Users\Serge\Documents\Bot\Новая папка\stud_tg_tests\StudentsBot\StudentsBot\target\classes started by Serge in C:\Users\Serge\Documents\Bot\Новая папка\stud_tg_tests)
+2025-08-11 11:04:37.146 [main] DEBUG com.example.studentsbot.Main - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-08-11 11:04:37.150 [main] INFO  com.example.studentsbot.Main - No active profile set, falling back to 1 default profile: "default"
+2025-08-11 11:04:40.039 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11 11:04:40.240 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 168 ms. Found 2 JPA repository interfaces.
+2025-08-11 11:04:41.970 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-08-11 11:04:42.012 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2025-08-11 11:04:42.014 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-11 11:04:42.014 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-08-11 11:04:42.255 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-11 11:04:42.260 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4905 ms
+2025-08-11 11:04:42.784 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-11 11:04:43.583 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@597a7afa
+2025-08-11 11:04:43.583 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-11 11:04:44.132 [main] INFO  liquibase.database - Set default schema name to public
+2025-08-11 11:04:45.387 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-08-11 11:04:46.153 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2025-08-11 11:04:46.199 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-08-11 11:04:46.262 [main] INFO  liquibase.util - UPDATE SUMMARY
+2025-08-11 11:04:46.268 [main] INFO  liquibase.util - Run:                          0
+2025-08-11 11:04:46.268 [main] INFO  liquibase.util - Previously run:               4
+2025-08-11 11:04:46.268 [main] INFO  liquibase.util - Filtered out:                 0
+2025-08-11 11:04:46.270 [main] INFO  liquibase.util - -------------------------------
+2025-08-11 11:04:46.270 [main] INFO  liquibase.util - Total change sets:            4
+2025-08-11 11:04:46.270 [main] INFO  liquibase.util - Update summary generated
+2025-08-11 11:04:46.274 [main] INFO  liquibase.command - Command execution complete
+2025-08-11 11:04:48.073 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-11 11:04:48.238 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-08-11 11:04:48.330 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-08-11 11:04:49.150 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-11 11:04:49.465 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-11 11:04:51.361 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-11 11:04:51.560 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 11:04:53.074 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-11 11:04:53.137 [main] INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-08-11 11:04:53.866 [main] INFO  org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-08-11 11:04:54.265 [main] INFO  org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-08-11 11:04:54.926 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2025-08-11 11:04:54.994 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-08-11 11:04:55.025 [main] INFO  com.example.studentsbot.Main - Started Main in 19.777 seconds (process running for 23.101)
+2025-08-11 11:05:36.008 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Message from 7201674426: 📁 Меню
+2025-08-11 11:05:56.508 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Message from 7201674426: /start
+2025-08-11 11:05:56.834 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - ЗапустилTsehSerg7201674426
+2025-08-11 11:06:02.045 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Message from 7201674426: null
+2025-08-11 11:06:02.343 [korzhovvbot Telegram Executor] INFO  com.example.studentsbot.db.UserVerification - Checking access: chatId=7201674426, normalizedPhone=79312610989
+2025-08-11 11:06:02.380 [korzhovvbot Telegram Executor] INFO  com.example.studentsbot.db.UserVerification - Result: true
+2025-08-11 11:06:02.381 [korzhovvbot Telegram Executor] INFO  AUTH_LOGGER - +79312610989
+2025-08-11 11:06:04.992 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Message from 7201674426: 📁 Меню
+2025-08-11 11:06:21.876 [http-nio-0.0.0.0-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-11 11:06:21.876 [http-nio-0.0.0.0-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-08-11 11:06:21.883 [http-nio-0.0.0.0-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-08-11 11:06:25.147 [http-nio-0.0.0.0-8080-exec-2] INFO  com.example.studentsbot.services.UserCRUDServices - Create
+2025-08-11 11:06:25.529 [http-nio-0.0.0.0-8080-exec-3] INFO  com.example.studentsbot.services.UserCRUDServices - Get All
+2025-08-11 11:06:29.500 [http-nio-0.0.0.0-8080-exec-5] INFO  com.example.studentsbot.services.UserCRUDServices - Create
+2025-08-11 11:06:29.642 [http-nio-0.0.0.0-8080-exec-6] INFO  com.example.studentsbot.services.UserCRUDServices - Get All
+2025-08-11 11:06:45.454 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Message from 7201674426: /start
+2025-08-11 11:06:45.897 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - ЗапустилTsehSerg7201674426
+2025-08-11 11:06:48.564 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Message from 7201674426: null
+2025-08-11 11:06:48.885 [korzhovvbot Telegram Executor] INFO  com.example.studentsbot.db.UserVerification - Checking access: chatId=7201674426, normalizedPhone=79312610989
+2025-08-11 11:06:48.905 [korzhovvbot Telegram Executor] INFO  com.example.studentsbot.db.UserVerification - Result: true
+2025-08-11 11:06:48.906 [korzhovvbot Telegram Executor] INFO  AUTH_LOGGER - +79312610989
+2025-08-11 11:07:09.753 [http-nio-0.0.0.0-8080-exec-8] INFO  com.example.studentsbot.services.UserCRUDServices - Delete: 5
+2025-08-11 11:07:10.250 [http-nio-0.0.0.0-8080-exec-9] INFO  com.example.studentsbot.services.UserCRUDServices - Get All
+2025-08-11 11:07:29.169 [http-nio-0.0.0.0-8080-exec-1] INFO  com.example.studentsbot.controllers.UsersControllers - Received DTO: DTOUser{id=null, userNumber='79312610989', roleId=2, chatId=7201674426, roleName='null'}
+2025-08-11 11:07:29.183 [http-nio-0.0.0.0-8080-exec-1] INFO  com.example.studentsbot.services.UserCRUDServices - Create
+2025-08-11 11:07:29.370 [http-nio-0.0.0.0-8080-exec-2] INFO  com.example.studentsbot.services.UserCRUDServices - Get All
+2025-08-11 11:07:39.210 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Message from 7201674426: /start
+2025-08-11 11:07:39.477 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - ЗапустилTsehSerg7201674426
+2025-08-11 11:07:42.096 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Message from 7201674426: null
+2025-08-11 11:07:42.430 [korzhovvbot Telegram Executor] INFO  com.example.studentsbot.db.UserVerification - Checking access: chatId=7201674426, normalizedPhone=79312610989
+2025-08-11 11:07:42.733 [korzhovvbot Telegram Executor] INFO  com.example.studentsbot.db.UserVerification - Result: true
+2025-08-11 11:07:42.734 [korzhovvbot Telegram Executor] INFO  AUTH_LOGGER - +79312610989
+2025-08-11 11:09:47.167 [SpringApplicationShutdownHook] INFO  org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-11 11:09:47.190 [tomcat-shutdown] INFO  org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-08-11 11:09:47.200 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 11:09:47.202 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-08-11 11:09:47.212 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-08-11 11:09:53.203 [main] INFO  com.example.studentsbot.Main - Starting Main using Java 23.0.2 with PID 18308 (C:\Users\Serge\Documents\Bot\Новая папка\stud_tg_tests\StudentsBot\StudentsBot\target\classes started by Serge in C:\Users\Serge\Documents\Bot\Новая папка\stud_tg_tests)
+2025-08-11 11:09:53.247 [main] DEBUG com.example.studentsbot.Main - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-08-11 11:09:53.249 [main] INFO  com.example.studentsbot.Main - No active profile set, falling back to 1 default profile: "default"
+2025-08-11 11:09:55.746 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11 11:09:55.919 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 143 ms. Found 2 JPA repository interfaces.
+2025-08-11 11:09:57.524 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-08-11 11:09:57.577 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2025-08-11 11:09:57.586 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-11 11:09:57.590 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-08-11 11:09:57.811 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-11 11:09:57.814 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4385 ms
+2025-08-11 11:09:58.463 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-11 11:09:59.149 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@fe8aaeb
+2025-08-11 11:09:59.151 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-11 11:09:59.577 [main] INFO  liquibase.database - Set default schema name to public
+2025-08-11 11:10:00.916 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-08-11 11:10:01.624 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2025-08-11 11:10:01.656 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-08-11 11:10:01.727 [main] INFO  liquibase.util - UPDATE SUMMARY
+2025-08-11 11:10:01.733 [main] INFO  liquibase.util - Run:                          0
+2025-08-11 11:10:01.733 [main] INFO  liquibase.util - Previously run:               4
+2025-08-11 11:10:01.733 [main] INFO  liquibase.util - Filtered out:                 0
+2025-08-11 11:10:01.733 [main] INFO  liquibase.util - -------------------------------
+2025-08-11 11:10:01.733 [main] INFO  liquibase.util - Total change sets:            4
+2025-08-11 11:10:01.736 [main] INFO  liquibase.util - Update summary generated
+2025-08-11 11:10:01.736 [main] INFO  liquibase.command - Command execution complete
+2025-08-11 11:10:03.131 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-11 11:10:03.300 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-08-11 11:10:03.396 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-08-11 11:10:04.224 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-11 11:10:05.096 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-11 11:10:06.870 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-11 11:10:07.083 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 11:10:08.454 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-11 11:10:08.523 [main] INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-08-11 11:10:09.333 [main] INFO  org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-08-11 11:10:09.723 [main] INFO  org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-08-11 11:10:10.193 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2025-08-11 11:10:10.237 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-08-11 11:10:10.255 [main] INFO  com.example.studentsbot.Main - Started Main in 18.268 seconds (process running for 20.95)
+2025-08-11 11:10:20.224 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Message from 7201674426: 📁 Меню
+2025-08-11 11:25:39.131 [SpringApplicationShutdownHook] INFO  org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-11 11:25:40.014 [tomcat-shutdown] INFO  org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-08-11 11:25:40.027 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 11:25:40.033 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-08-11 11:25:40.087 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-08-11 11:25:55.156 [main] INFO  com.example.studentsbot.Main - Starting Main using Java 23.0.2 with PID 13944 (C:\Users\Serge\Documents\Bot\Новая папка\stud_tg_tests\StudentsBot\StudentsBot\target\classes started by Serge in C:\Users\Serge\Documents\Bot\Новая папка\stud_tg_tests)
+2025-08-11 11:25:55.209 [main] DEBUG com.example.studentsbot.Main - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-08-11 11:25:55.221 [main] INFO  com.example.studentsbot.Main - No active profile set, falling back to 1 default profile: "default"
+2025-08-11 11:25:57.846 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11 11:25:58.025 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 160 ms. Found 2 JPA repository interfaces.
+2025-08-11 11:25:59.722 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-08-11 11:25:59.768 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2025-08-11 11:25:59.772 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-11 11:25:59.774 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-08-11 11:26:00.058 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-11 11:26:00.058 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4381 ms
+2025-08-11 11:26:00.581 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-11 11:26:01.374 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2df3545d
+2025-08-11 11:26:01.380 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-11 11:26:01.903 [main] INFO  liquibase.database - Set default schema name to public
+2025-08-11 11:26:03.355 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-08-11 11:26:04.299 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2025-08-11 11:26:04.577 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-08-11 11:26:04.641 [main] INFO  liquibase.util - UPDATE SUMMARY
+2025-08-11 11:26:04.655 [main] INFO  liquibase.util - Run:                          0
+2025-08-11 11:26:04.655 [main] INFO  liquibase.util - Previously run:               4
+2025-08-11 11:26:04.655 [main] INFO  liquibase.util - Filtered out:                 0
+2025-08-11 11:26:04.655 [main] INFO  liquibase.util - -------------------------------
+2025-08-11 11:26:04.657 [main] INFO  liquibase.util - Total change sets:            4
+2025-08-11 11:26:04.657 [main] INFO  liquibase.util - Update summary generated
+2025-08-11 11:26:04.657 [main] INFO  liquibase.command - Command execution complete
+2025-08-11 11:26:06.453 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-11 11:26:06.637 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-08-11 11:26:06.739 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-08-11 11:26:07.512 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-11 11:26:07.853 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-11 11:26:09.595 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-11 11:26:10.336 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 11:26:11.694 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-11 11:26:11.763 [main] INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-08-11 11:26:12.447 [main] INFO  org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-08-11 11:26:12.817 [main] INFO  org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-08-11 11:26:13.378 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2025-08-11 11:26:13.430 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-08-11 11:26:13.450 [main] INFO  com.example.studentsbot.Main - Started Main in 19.556 seconds (process running for 22.32)
+2025-08-11 11:26:27.612 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Message from 7201674426: 📁 Меню
+2025-08-11 11:26:56.697 [SpringApplicationShutdownHook] INFO  org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-11 11:26:56.731 [tomcat-shutdown] INFO  org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-08-11 11:26:56.747 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 11:26:56.755 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-08-11 11:26:56.763 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-08-11 11:27:09.346 [main] INFO  com.example.studentsbot.Main - Starting Main using Java 23.0.2 with PID 1096 (C:\Users\Serge\Documents\Bot\Новая папка\stud_tg_tests\StudentsBot\StudentsBot\target\classes started by Serge in C:\Users\Serge\Documents\Bot\Новая папка\stud_tg_tests)
+2025-08-11 11:27:09.378 [main] DEBUG com.example.studentsbot.Main - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-08-11 11:27:09.386 [main] INFO  com.example.studentsbot.Main - No active profile set, falling back to 1 default profile: "default"
+2025-08-11 11:27:11.885 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11 11:27:12.060 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 148 ms. Found 2 JPA repository interfaces.
+2025-08-11 11:27:13.891 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-08-11 11:27:13.934 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2025-08-11 11:27:13.936 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-11 11:27:13.936 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-08-11 11:27:14.175 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-11 11:27:14.186 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4516 ms
+2025-08-11 11:27:14.744 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-11 11:27:16.232 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7ead1d80
+2025-08-11 11:27:16.232 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-11 11:27:16.810 [main] INFO  liquibase.database - Set default schema name to public
+2025-08-11 11:27:18.201 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-08-11 11:27:18.946 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2025-08-11 11:27:18.978 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-08-11 11:27:19.062 [main] INFO  liquibase.util - UPDATE SUMMARY
+2025-08-11 11:27:19.062 [main] INFO  liquibase.util - Run:                          0
+2025-08-11 11:27:19.062 [main] INFO  liquibase.util - Previously run:               4
+2025-08-11 11:27:19.062 [main] INFO  liquibase.util - Filtered out:                 0
+2025-08-11 11:27:19.062 [main] INFO  liquibase.util - -------------------------------
+2025-08-11 11:27:19.074 [main] INFO  liquibase.util - Total change sets:            4
+2025-08-11 11:27:19.074 [main] INFO  liquibase.util - Update summary generated
+2025-08-11 11:27:19.074 [main] INFO  liquibase.command - Command execution complete
+2025-08-11 11:27:20.461 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-11 11:27:20.621 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-08-11 11:27:20.726 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-08-11 11:27:21.471 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-11 11:27:21.825 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-11 11:27:23.603 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-11 11:27:24.085 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 11:27:25.523 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-11 11:27:25.598 [main] INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-08-11 11:27:26.270 [main] INFO  org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-08-11 11:27:26.655 [main] INFO  org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-08-11 11:27:27.081 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2025-08-11 11:27:27.127 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-08-11 11:27:27.153 [main] INFO  com.example.studentsbot.Main - Started Main in 19.042 seconds (process running for 21.664)
+2025-08-11 11:27:56.661 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Message from 7201674426: 📁 Меню
+2025-08-11 11:27:59.258 [korzhovvbot Telegram Executor] INFO  NAVIGATION_LOGGER - User 7201674426 action: dir:Повар
+2025-08-11 11:27:59.345 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Перешел в @TsehSerg (ID: 7201674426): dir:Повар
+2025-08-11 11:27:59.521 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Callback from 7201674426: dir:Повар
+2025-08-11 11:29:03.511 [korzhovvbot Telegram Executor] INFO  NAVIGATION_LOGGER - User 7201674426 action: ..
+2025-08-11 11:29:03.887 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Callback from 7201674426: ..
+2025-08-11 11:29:05.335 [korzhovvbot Telegram Executor] INFO  NAVIGATION_LOGGER - User 7201674426 action: dir:Повар
+2025-08-11 11:29:05.405 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Перешел в @TsehSerg (ID: 7201674426): dir:Повар
+2025-08-11 11:29:05.536 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Callback from 7201674426: dir:Повар
+2025-08-11 11:29:07.037 [korzhovvbot Telegram Executor] INFO  NAVIGATION_LOGGER - User 7201674426 action: ..
+2025-08-11 11:29:07.264 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Callback from 7201674426: ..
+2025-08-11 11:29:09.460 [korzhovvbot Telegram Executor] INFO  NAVIGATION_LOGGER - User 7201674426 action: dir:Старшая хозяйка
+2025-08-11 11:29:09.538 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Перешел в @TsehSerg (ID: 7201674426): dir:Старшая хозяйка
+2025-08-11 11:29:09.669 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Callback from 7201674426: dir:Старшая хозяйка
+2025-08-11 11:29:12.534 [korzhovvbot Telegram Executor] INFO  NAVIGATION_LOGGER - User 7201674426 action: ..
+2025-08-11 11:29:12.703 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Callback from 7201674426: ..
+2025-08-11 11:29:14.121 [korzhovvbot Telegram Executor] INFO  NAVIGATION_LOGGER - User 7201674426 action: dir:Хозяйка
+2025-08-11 11:29:14.199 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Перешел в @TsehSerg (ID: 7201674426): dir:Хозяйка
+2025-08-11 11:29:14.327 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Callback from 7201674426: dir:Хозяйка
+2025-08-11 11:29:15.688 [korzhovvbot Telegram Executor] INFO  NAVIGATION_LOGGER - User 7201674426 action: dir:testDir
+2025-08-11 11:29:15.762 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Перешел в @TsehSerg (ID: 7201674426): dir:testDir
+2025-08-11 11:29:15.931 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Callback from 7201674426: dir:testDir
+2025-08-11 11:29:16.929 [korzhovvbot Telegram Executor] INFO  NAVIGATION_LOGGER - User 7201674426 action: file:Тест1.txt
+2025-08-11 11:29:17.108 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Callback from 7201674426: file:Тест1.txt
+2025-08-11 11:29:18.897 [korzhovvbot Telegram Executor] INFO  NAVIGATION_LOGGER - User 7201674426 action: Марс
+2025-08-11 11:29:19.153 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Callback from 7201674426: Марс
+2025-08-11 11:29:19.535 [korzhovvbot Telegram Executor] INFO  NAVIGATION_LOGGER - User 7201674426 action: Париж
+2025-08-11 11:29:19.773 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Callback from 7201674426: Париж
+2025-08-11 11:29:20.295 [korzhovvbot Telegram Executor] INFO  NAVIGATION_LOGGER - User 7201674426 action: 1939
+2025-08-11 11:29:20.585 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Callback from 7201674426: 1939
+2025-08-11 11:29:20.986 [korzhovvbot Telegram Executor] INFO  NAVIGATION_LOGGER - User 7201674426 action: H2O
+2025-08-11 11:29:21.273 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Callback from 7201674426: H2O
+2025-08-11 11:29:21.888 [korzhovvbot Telegram Executor] INFO  NAVIGATION_LOGGER - User 7201674426 action: Достоевский
+2025-08-11 11:29:22.604 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Callback from 7201674426: Достоевский
+2025-08-11 11:30:56.242 [SpringApplicationShutdownHook] INFO  org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-11 11:30:56.287 [tomcat-shutdown] INFO  org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-08-11 11:30:56.303 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 11:30:56.310 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-08-11 11:30:56.336 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-08-11 11:31:07.956 [main] INFO  com.example.studentsbot.Main - Starting Main using Java 23.0.2 with PID 2952 (C:\Users\Serge\Documents\Bot\Новая папка\stud_tg_tests\StudentsBot\StudentsBot\target\classes started by Serge in C:\Users\Serge\Documents\Bot\Новая папка\stud_tg_tests)
+2025-08-11 11:31:07.983 [main] DEBUG com.example.studentsbot.Main - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-08-11 11:31:07.987 [main] INFO  com.example.studentsbot.Main - No active profile set, falling back to 1 default profile: "default"
+2025-08-11 11:31:11.045 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11 11:31:11.182 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 128 ms. Found 2 JPA repository interfaces.
+2025-08-11 11:31:12.945 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-08-11 11:31:12.994 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2025-08-11 11:31:13.002 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-11 11:31:13.004 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-08-11 11:31:13.255 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-11 11:31:13.262 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5003 ms
+2025-08-11 11:31:13.954 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-11 11:31:14.712 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2df3545d
+2025-08-11 11:31:14.716 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-11 11:31:15.301 [main] INFO  liquibase.database - Set default schema name to public
+2025-08-11 11:31:16.878 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-08-11 11:31:17.355 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2025-08-11 11:31:17.388 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-08-11 11:31:17.469 [main] INFO  liquibase.util - UPDATE SUMMARY
+2025-08-11 11:31:17.469 [main] INFO  liquibase.util - Run:                          0
+2025-08-11 11:31:17.471 [main] INFO  liquibase.util - Previously run:               4
+2025-08-11 11:31:17.471 [main] INFO  liquibase.util - Filtered out:                 0
+2025-08-11 11:31:17.471 [main] INFO  liquibase.util - -------------------------------
+2025-08-11 11:31:17.473 [main] INFO  liquibase.util - Total change sets:            4
+2025-08-11 11:31:17.475 [main] INFO  liquibase.util - Update summary generated
+2025-08-11 11:31:17.483 [main] INFO  liquibase.command - Command execution complete
+2025-08-11 11:31:18.956 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-11 11:31:19.117 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-08-11 11:31:19.228 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-08-11 11:31:20.086 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-11 11:31:20.474 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-11 11:31:22.322 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-11 11:31:22.724 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 11:31:24.254 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-11 11:31:24.327 [main] INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-08-11 11:31:25.392 [main] INFO  org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-08-11 11:31:25.934 [main] INFO  org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-08-11 11:31:26.503 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2025-08-11 11:31:26.558 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-08-11 11:31:26.628 [main] INFO  com.example.studentsbot.Main - Started Main in 20.008 seconds (process running for 22.889)
+2025-08-11 11:31:32.735 [korzhovvbot Telegram Executor] INFO  NAVIGATION_LOGGER - User 7201674426 action: file:Тест2.txt
+2025-08-11 11:31:33.433 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Перешел в @TsehSerg (ID: 7201674426): file:Тест2.txt
+2025-08-11 11:31:33.704 [korzhovvbot Telegram Executor] ERROR com.example.studentsbot.StudentsBot - Ошибка чтения файла
+java.nio.file.NoSuchFileException: C:\Users\vishvenkov.sergej\Documents\dir\Тест2.txt
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85) ~[?:?]
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[?:?]
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[?:?]
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:234) ~[?:?]
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:380) ~[?:?]
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:432) ~[?:?]
+	at java.base/java.nio.file.Files.readAllBytes(Files.java:3292) ~[?:?]
+	at java.base/java.nio.file.Files.readString(Files.java:3370) ~[?:?]
+	at java.base/java.nio.file.Files.readString(Files.java:3329) ~[?:?]
+	at com.example.studentsbot.directory.DirectoryLister.getFileContent(DirectoryLister.java:120) ~[classes/:?]
+	at com.example.studentsbot.StudentsBot.sendFile(StudentsBot.java:517) ~[classes/:?]
+	at com.example.studentsbot.StudentsBot.handleCallbackQuery(StudentsBot.java:477) ~[classes/:?]
+	at com.example.studentsbot.StudentsBot.onUpdateReceived(StudentsBot.java:129) ~[classes/:?]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597) [?:?]
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27) [telegrambots-meta-6.9.7.1.jar:?]
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:312) [telegrambots-6.9.7.1.jar:?]
+2025-08-11 11:31:33.736 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Callback from 7201674426: file:Тест2.txt
+2025-08-11 11:31:37.356 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Message from 7201674426: 📁 Меню
+2025-08-11 11:31:40.977 [korzhovvbot Telegram Executor] INFO  NAVIGATION_LOGGER - User 7201674426 action: dir:Хозяйка
+2025-08-11 11:31:41.055 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Перешел в @TsehSerg (ID: 7201674426): dir:Хозяйка
+2025-08-11 11:31:41.222 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Callback from 7201674426: dir:Хозяйка
+2025-08-11 11:31:42.494 [korzhovvbot Telegram Executor] INFO  NAVIGATION_LOGGER - User 7201674426 action: dir:testDir
+2025-08-11 11:31:42.579 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Перешел в @TsehSerg (ID: 7201674426): dir:testDir
+2025-08-11 11:31:42.852 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Callback from 7201674426: dir:testDir
+2025-08-11 11:31:43.949 [korzhovvbot Telegram Executor] INFO  NAVIGATION_LOGGER - User 7201674426 action: file:Тест2.txt
+2025-08-11 11:31:44.118 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Callback from 7201674426: file:Тест2.txt
+2025-08-11 11:31:45.322 [korzhovvbot Telegram Executor] INFO  NAVIGATION_LOGGER - User 7201674426 action: Python
+2025-08-11 11:31:45.569 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Callback from 7201674426: Python
+2025-08-11 11:31:46.237 [korzhovvbot Telegram Executor] INFO  NAVIGATION_LOGGER - User 7201674426 action: Ячейка памяти для хранения данных
+2025-08-11 11:31:46.447 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Callback from 7201674426: Ячейка памяти для хранения данных
+2025-08-11 11:31:46.916 [korzhovvbot Telegram Executor] INFO  NAVIGATION_LOGGER - User 7201674426 action: #
+2025-08-11 11:31:47.243 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Callback from 7201674426: #
+2025-08-11 11:31:47.633 [korzhovvbot Telegram Executor] INFO  NAVIGATION_LOGGER - User 7201674426 action: Минимальное значение
+2025-08-11 11:31:48.018 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Callback from 7201674426: Минимальное значение
+2025-08-11 11:31:48.531 [korzhovvbot Telegram Executor] INFO  NAVIGATION_LOGGER - User 7201674426 action: C
+2025-08-11 11:31:49.092 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Callback from 7201674426: C
+2025-08-11 11:43:06.993 [SpringApplicationShutdownHook] INFO  org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-11 11:43:07.023 [tomcat-shutdown] INFO  org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-08-11 11:43:07.037 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 11:43:07.037 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-08-11 11:43:07.052 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-08-11 11:43:23.042 [main] INFO  com.example.studentsbot.Main - Starting Main using Java 23.0.2 with PID 18900 (C:\Users\Serge\Documents\Bot\Новая папка\stud_tg_tests\StudentsBot\StudentsBot\target\classes started by Serge in C:\Users\Serge\Documents\Bot\Новая папка\stud_tg_tests)
+2025-08-11 11:43:23.100 [main] DEBUG com.example.studentsbot.Main - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-08-11 11:43:23.106 [main] INFO  com.example.studentsbot.Main - No active profile set, falling back to 1 default profile: "default"
+2025-08-11 11:43:25.611 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11 11:43:25.800 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 167 ms. Found 2 JPA repository interfaces.
+2025-08-11 11:43:27.513 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-08-11 11:43:27.558 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2025-08-11 11:43:27.566 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-11 11:43:27.568 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-08-11 11:43:27.819 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-11 11:43:27.825 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4518 ms
+2025-08-11 11:43:28.387 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-11 11:43:29.382 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4a660b34
+2025-08-11 11:43:29.396 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-11 11:43:30.133 [main] INFO  liquibase.database - Set default schema name to public
+2025-08-11 11:43:31.692 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-08-11 11:43:32.678 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2025-08-11 11:43:32.714 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-08-11 11:43:32.774 [main] INFO  liquibase.util - UPDATE SUMMARY
+2025-08-11 11:43:32.774 [main] INFO  liquibase.util - Run:                          0
+2025-08-11 11:43:32.774 [main] INFO  liquibase.util - Previously run:               4
+2025-08-11 11:43:32.774 [main] INFO  liquibase.util - Filtered out:                 0
+2025-08-11 11:43:32.776 [main] INFO  liquibase.util - -------------------------------
+2025-08-11 11:43:32.776 [main] INFO  liquibase.util - Total change sets:            4
+2025-08-11 11:43:32.778 [main] INFO  liquibase.util - Update summary generated
+2025-08-11 11:43:32.782 [main] INFO  liquibase.command - Command execution complete
+2025-08-11 11:43:34.192 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-11 11:43:34.353 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-08-11 11:43:34.495 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-08-11 11:43:35.352 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-11 11:43:35.752 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-11 11:43:37.824 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-11 11:43:38.082 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 11:43:39.585 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-11 11:43:39.658 [main] INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-08-11 11:43:40.366 [main] INFO  org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-08-11 11:43:40.778 [main] INFO  org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-08-11 11:43:41.240 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2025-08-11 11:43:41.289 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-08-11 11:43:41.310 [main] INFO  com.example.studentsbot.Main - Started Main in 19.653 seconds (process running for 22.469)
+2025-08-11 11:44:29.188 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Message from 7201674426: 📁 Меню
+2025-08-11 11:44:38.337 [korzhovvbot Telegram Executor] INFO  NAVIGATION_LOGGER - User 7201674426 action: dir:Хозяйка
+2025-08-11 11:44:38.414 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Перешел в @TsehSerg (ID: 7201674426): dir:Хозяйка
+2025-08-11 11:44:38.592 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Callback from 7201674426: dir:Хозяйка
+2025-08-11 11:44:39.311 [korzhovvbot Telegram Executor] INFO  NAVIGATION_LOGGER - User 7201674426 action: dir:testDir
+2025-08-11 11:44:39.386 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - Перешел в @TsehSerg (ID: 7201674426): dir:testDir
+2025-08-11 11:44:39.524 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Callback from 7201674426: dir:testDir
+2025-08-11 11:44:40.568 [korzhovvbot Telegram Executor] INFO  NAVIGATION_LOGGER - User 7201674426 action: file:Тест1.txt
+2025-08-11 11:44:40.760 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Callback from 7201674426: file:Тест1.txt
+2025-08-11 11:44:41.579 [korzhovvbot Telegram Executor] INFO  NAVIGATION_LOGGER - User 7201674426 action: Меркурий
+2025-08-11 11:44:42.355 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Callback from 7201674426: Меркурий
+2025-08-11 11:44:43.803 [korzhovvbot Telegram Executor] INFO  NAVIGATION_LOGGER - User 7201674426 action: Лондон
+2025-08-11 11:44:44.094 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Callback from 7201674426: Лондон
+2025-08-11 11:44:44.805 [korzhovvbot Telegram Executor] INFO  NAVIGATION_LOGGER - User 7201674426 action: 1941
+2025-08-11 11:44:45.390 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Callback from 7201674426: 1941
+2025-08-11 11:44:46.086 [korzhovvbot Telegram Executor] INFO  NAVIGATION_LOGGER - User 7201674426 action: O2
+2025-08-11 11:44:46.349 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Callback from 7201674426: O2
+2025-08-11 11:44:46.952 [korzhovvbot Telegram Executor] INFO  NAVIGATION_LOGGER - User 7201674426 action: Чехов
+2025-08-11 11:44:47.581 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Callback from 7201674426: Чехов
+2025-08-11 12:56:30.095 [http-nio-0.0.0.0-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-11 12:56:30.095 [http-nio-0.0.0.0-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-08-11 12:56:30.095 [http-nio-0.0.0.0-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2025-08-11 13:16:59.521 [SpringApplicationShutdownHook] INFO  org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-11 13:16:59.552 [tomcat-shutdown] INFO  org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-08-11 13:16:59.565 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 13:16:59.579 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-08-11 13:16:59.590 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-08-11 13:17:14.497 [main] ERROR org.springframework.boot.SpringApplication - Application run failed
+org.yaml.snakeyaml.scanner.ScannerException: while scanning a simple key
+ in 'reader', line 32, column 5:
+        kipUrl:"https://drive.google.com ... 
+        ^
+could not find expected ':'
+ in 'reader', line 34, column 1:
+    security:
+    ^
+
+	at org.yaml.snakeyaml.scanner.ScannerImpl.stalePossibleSimpleKeys(ScannerImpl.java:517) ~[snakeyaml-2.4.jar:?]
+	at org.yaml.snakeyaml.scanner.ScannerImpl.needMoreTokens(ScannerImpl.java:322) ~[snakeyaml-2.4.jar:?]
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:238) ~[snakeyaml-2.4.jar:?]
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingKey.produce(ParserImpl.java:637) ~[snakeyaml-2.4.jar:?]
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:161) ~[snakeyaml-2.4.jar:?]
+	at org.yaml.snakeyaml.comments.CommentEventsCollector$1.peek(CommentEventsCollector.java:57) ~[snakeyaml-2.4.jar:?]
+	at org.yaml.snakeyaml.comments.CommentEventsCollector$1.peek(CommentEventsCollector.java:43) ~[snakeyaml-2.4.jar:?]
+	at org.yaml.snakeyaml.comments.CommentEventsCollector.collectEvents(CommentEventsCollector.java:136) ~[snakeyaml-2.4.jar:?]
+	at org.yaml.snakeyaml.comments.CommentEventsCollector.collectEvents(CommentEventsCollector.java:116) ~[snakeyaml-2.4.jar:?]
+	at org.yaml.snakeyaml.composer.Composer.composeScalarNode(Composer.java:249) ~[snakeyaml-2.4.jar:?]
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:214) ~[snakeyaml-2.4.jar:?]
+	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:396) ~[snakeyaml-2.4.jar:?]
+	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:361) ~[snakeyaml-2.4.jar:?]
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:329) ~[snakeyaml-2.4.jar:?]
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:218) ~[snakeyaml-2.4.jar:?]
+	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:396) ~[snakeyaml-2.4.jar:?]
+	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:361) ~[snakeyaml-2.4.jar:?]
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:329) ~[snakeyaml-2.4.jar:?]
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:218) ~[snakeyaml-2.4.jar:?]
+	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:396) ~[snakeyaml-2.4.jar:?]
+	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:361) ~[snakeyaml-2.4.jar:?]
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:329) ~[snakeyaml-2.4.jar:?]
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:218) ~[snakeyaml-2.4.jar:?]
+	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:141) ~[snakeyaml-2.4.jar:?]
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:163) ~[snakeyaml-2.4.jar:?]
+	at org.springframework.boot.env.OriginTrackedYamlLoader$OriginTrackingConstructor.getData(OriginTrackedYamlLoader.java:99) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:530) ~[snakeyaml-2.4.jar:?]
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:203) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:169) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.boot.env.OriginTrackedYamlLoader.load(OriginTrackedYamlLoader.java:84) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.env.YamlPropertySourceLoader.load(YamlPropertySourceLoader.java:50) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.context.config.StandardConfigDataLoader.load(StandardConfigDataLoader.java:54) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.context.config.StandardConfigDataLoader.load(StandardConfigDataLoader.java:36) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.context.config.ConfigDataLoaders.load(ConfigDataLoaders.java:96) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.context.config.ConfigDataImporter.load(ConfigDataImporter.java:132) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.context.config.ConfigDataImporter.resolveAndLoad(ConfigDataImporter.java:87) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.context.config.ConfigDataEnvironmentContributors.withProcessedImports(ConfigDataEnvironmentContributors.java:121) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.context.config.ConfigDataEnvironment.processInitial(ConfigDataEnvironment.java:245) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.context.config.ConfigDataEnvironment.processAndApply(ConfigDataEnvironment.java:232) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.context.config.ConfigDataEnvironmentPostProcessor.postProcessEnvironment(ConfigDataEnvironmentPostProcessor.java:96) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.context.config.ConfigDataEnvironmentPostProcessor.postProcessEnvironment(ConfigDataEnvironmentPostProcessor.java:89) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.env.EnvironmentPostProcessorApplicationListener.onApplicationEnvironmentPreparedEvent(EnvironmentPostProcessorApplicationListener.java:132) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.env.EnvironmentPostProcessorApplicationListener.onApplicationEvent(EnvironmentPostProcessorApplicationListener.java:115) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:185) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:178) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:156) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:138) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.boot.context.event.EventPublishingRunListener.multicastInitialEvent(EventPublishingRunListener.java:136) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:81) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:64) ~[spring-boot-3.5.0.jar:3.5.0]
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[?:?]
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:118) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:112) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:63) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:353) [spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:313) [spring-boot-3.5.0.jar:3.5.0]
+	at com.example.studentsbot.Main.main(Main.java:35) [classes/:?]
+2025-08-11 13:18:48.068 [main] ERROR org.springframework.boot.SpringApplication - Application run failed
+org.yaml.snakeyaml.scanner.ScannerException: while scanning a simple key
+ in 'reader', line 50, column 1:
+    hasAccessToPath
+    ^
+could not find expected ':'
+ in 'reader', line 50, column 16:
+    hasAccessToPath
+                   ^
+
+	at org.yaml.snakeyaml.scanner.ScannerImpl.removePossibleSimpleKey(ScannerImpl.java:565) ~[snakeyaml-2.4.jar:?]
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchStreamEnd(ScannerImpl.java:636) ~[snakeyaml-2.4.jar:?]
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:347) ~[snakeyaml-2.4.jar:?]
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:239) ~[snakeyaml-2.4.jar:?]
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingKey.produce(ParserImpl.java:637) ~[snakeyaml-2.4.jar:?]
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:161) ~[snakeyaml-2.4.jar:?]
+	at org.yaml.snakeyaml.comments.CommentEventsCollector$1.peek(CommentEventsCollector.java:57) ~[snakeyaml-2.4.jar:?]
+	at org.yaml.snakeyaml.comments.CommentEventsCollector$1.peek(CommentEventsCollector.java:43) ~[snakeyaml-2.4.jar:?]
+	at org.yaml.snakeyaml.comments.CommentEventsCollector.collectEvents(CommentEventsCollector.java:136) ~[snakeyaml-2.4.jar:?]
+	at org.yaml.snakeyaml.comments.CommentEventsCollector.collectEvents(CommentEventsCollector.java:116) ~[snakeyaml-2.4.jar:?]
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:336) ~[snakeyaml-2.4.jar:?]
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:218) ~[snakeyaml-2.4.jar:?]
+	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:396) ~[snakeyaml-2.4.jar:?]
+	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:361) ~[snakeyaml-2.4.jar:?]
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:329) ~[snakeyaml-2.4.jar:?]
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:218) ~[snakeyaml-2.4.jar:?]
+	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:141) ~[snakeyaml-2.4.jar:?]
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:163) ~[snakeyaml-2.4.jar:?]
+	at org.springframework.boot.env.OriginTrackedYamlLoader$OriginTrackingConstructor.getData(OriginTrackedYamlLoader.java:99) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:530) ~[snakeyaml-2.4.jar:?]
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:203) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:169) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.boot.env.OriginTrackedYamlLoader.load(OriginTrackedYamlLoader.java:84) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.env.YamlPropertySourceLoader.load(YamlPropertySourceLoader.java:50) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.context.config.StandardConfigDataLoader.load(StandardConfigDataLoader.java:54) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.context.config.StandardConfigDataLoader.load(StandardConfigDataLoader.java:36) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.context.config.ConfigDataLoaders.load(ConfigDataLoaders.java:96) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.context.config.ConfigDataImporter.load(ConfigDataImporter.java:132) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.context.config.ConfigDataImporter.resolveAndLoad(ConfigDataImporter.java:87) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.context.config.ConfigDataEnvironmentContributors.withProcessedImports(ConfigDataEnvironmentContributors.java:121) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.context.config.ConfigDataEnvironment.processInitial(ConfigDataEnvironment.java:245) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.context.config.ConfigDataEnvironment.processAndApply(ConfigDataEnvironment.java:232) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.context.config.ConfigDataEnvironmentPostProcessor.postProcessEnvironment(ConfigDataEnvironmentPostProcessor.java:96) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.context.config.ConfigDataEnvironmentPostProcessor.postProcessEnvironment(ConfigDataEnvironmentPostProcessor.java:89) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.env.EnvironmentPostProcessorApplicationListener.onApplicationEnvironmentPreparedEvent(EnvironmentPostProcessorApplicationListener.java:132) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.env.EnvironmentPostProcessorApplicationListener.onApplicationEvent(EnvironmentPostProcessorApplicationListener.java:115) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:185) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:178) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:156) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:138) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.boot.context.event.EventPublishingRunListener.multicastInitialEvent(EventPublishingRunListener.java:136) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:81) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:64) ~[spring-boot-3.5.0.jar:3.5.0]
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[?:?]
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:118) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:112) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:63) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:353) [spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:313) [spring-boot-3.5.0.jar:3.5.0]
+	at com.example.studentsbot.Main.main(Main.java:35) [classes/:?]
+2025-08-11 13:20:39.188 [main] INFO  com.example.studentsbot.Main - Starting Main using Java 23.0.2 with PID 10664 (C:\Users\Serge\Documents\Bot\Новая папка\stud_tg_tests\StudentsBot\StudentsBot\target\classes started by Serge in C:\Users\Serge\Documents\Bot\Новая папка\stud_tg_tests)
+2025-08-11 13:20:39.216 [main] DEBUG com.example.studentsbot.Main - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-08-11 13:20:39.220 [main] INFO  com.example.studentsbot.Main - No active profile set, falling back to 1 default profile: "default"
+2025-08-11 13:20:41.550 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11 13:20:41.726 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 148 ms. Found 2 JPA repository interfaces.
+2025-08-11 13:20:44.511 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-08-11 13:20:44.548 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2025-08-11 13:20:44.551 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-11 13:20:44.552 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-08-11 13:20:44.768 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-11 13:20:44.773 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5341 ms
+2025-08-11 13:20:45.312 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-11 13:20:45.861 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1d1bf7bf
+2025-08-11 13:20:45.866 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-11 13:20:46.348 [main] INFO  liquibase.database - Set default schema name to public
+2025-08-11 13:20:47.644 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-08-11 13:20:47.918 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2025-08-11 13:20:47.934 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-08-11 13:20:47.971 [main] INFO  liquibase.util - UPDATE SUMMARY
+2025-08-11 13:20:47.972 [main] INFO  liquibase.util - Run:                          0
+2025-08-11 13:20:47.972 [main] INFO  liquibase.util - Previously run:               4
+2025-08-11 13:20:47.973 [main] INFO  liquibase.util - Filtered out:                 0
+2025-08-11 13:20:47.973 [main] INFO  liquibase.util - -------------------------------
+2025-08-11 13:20:47.974 [main] INFO  liquibase.util - Total change sets:            4
+2025-08-11 13:20:47.977 [main] INFO  liquibase.util - Update summary generated
+2025-08-11 13:20:47.981 [main] INFO  liquibase.command - Command execution complete
+2025-08-11 13:20:49.417 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-11 13:20:49.641 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-08-11 13:20:49.765 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-08-11 13:20:50.694 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-11 13:20:50.978 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-11 13:20:53.100 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-11 13:20:53.237 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 13:20:54.650 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-11 13:20:54.711 [main] INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-08-11 13:20:55.482 [main] INFO  org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-08-11 13:20:55.873 [main] INFO  org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-08-11 13:20:56.293 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2025-08-11 13:20:56.346 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-08-11 13:20:56.366 [main] INFO  com.example.studentsbot.Main - Started Main in 18.401 seconds (process running for 20.97)
+2025-08-11 13:21:04.027 [http-nio-0.0.0.0-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-11 13:21:04.027 [http-nio-0.0.0.0-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-08-11 13:21:04.031 [http-nio-0.0.0.0-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-08-11 13:21:12.221 [http-nio-0.0.0.0-8080-exec-6] INFO  com.example.studentsbot.services.UserCRUDServices - Get All
+2025-08-11 13:21:22.835 [http-nio-0.0.0.0-8080-exec-9] INFO  com.example.studentsbot.services.UserCRUDServices - Create
+2025-08-11 13:21:23.008 [http-nio-0.0.0.0-8080-exec-10] INFO  com.example.studentsbot.services.UserCRUDServices - Get All
+2025-08-11 13:21:26.122 [http-nio-0.0.0.0-8080-exec-2] INFO  com.example.studentsbot.services.UserCRUDServices - Create
+2025-08-11 13:21:26.201 [http-nio-0.0.0.0-8080-exec-3] INFO  com.example.studentsbot.services.UserCRUDServices - Get All
+2025-08-11 13:21:40.883 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Message from 7201674426: /start
+2025-08-11 13:21:41.252 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - ЗапустилTsehSerg7201674426
+2025-08-11 13:21:43.668 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Message from 7201674426: null
+2025-08-11 13:21:43.709 [korzhovvbot Telegram Executor] INFO  com.example.studentsbot.db.UserVerification - Checking access: chatId=7201674426, normalizedPhone=79312610989
+2025-08-11 13:21:43.739 [korzhovvbot Telegram Executor] INFO  com.example.studentsbot.db.UserVerification - Result: true
+2025-08-11 13:21:43.740 [korzhovvbot Telegram Executor] INFO  AUTH_LOGGER - +79312610989
+2025-08-11 13:21:50.747 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Message from 7201674426: 📊 КИП
+2025-08-11 13:22:07.997 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Message from 7201674426: 📊 КИП
+2025-08-11 13:28:42.192 [SpringApplicationShutdownHook] INFO  org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-11 13:28:42.218 [tomcat-shutdown] INFO  org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-08-11 13:28:42.232 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 13:28:42.243 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-08-11 13:28:42.255 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-08-11 13:28:56.288 [main] INFO  com.example.studentsbot.Main - Starting Main using Java 23.0.2 with PID 17392 (C:\Users\Serge\Documents\Bot\Новая папка\stud_tg_tests\StudentsBot\StudentsBot\target\classes started by Serge in C:\Users\Serge\Documents\Bot\Новая папка\stud_tg_tests)
+2025-08-11 13:28:56.339 [main] DEBUG com.example.studentsbot.Main - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-08-11 13:28:56.344 [main] INFO  com.example.studentsbot.Main - No active profile set, falling back to 1 default profile: "default"
+2025-08-11 13:28:59.125 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11 13:28:59.295 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 148 ms. Found 2 JPA repository interfaces.
+2025-08-11 13:29:01.218 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-08-11 13:29:01.267 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2025-08-11 13:29:01.275 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-11 13:29:01.276 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-08-11 13:29:01.569 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-11 13:29:01.576 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5023 ms
+2025-08-11 13:29:02.234 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-11 13:29:02.865 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4d43a1b7
+2025-08-11 13:29:02.869 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-11 13:29:03.397 [main] INFO  liquibase.database - Set default schema name to public
+2025-08-11 13:29:04.918 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-08-11 13:29:05.420 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2025-08-11 13:29:05.437 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-08-11 13:29:05.479 [main] INFO  liquibase.util - UPDATE SUMMARY
+2025-08-11 13:29:05.479 [main] INFO  liquibase.util - Run:                          0
+2025-08-11 13:29:05.480 [main] INFO  liquibase.util - Previously run:               4
+2025-08-11 13:29:05.480 [main] INFO  liquibase.util - Filtered out:                 0
+2025-08-11 13:29:05.481 [main] INFO  liquibase.util - -------------------------------
+2025-08-11 13:29:05.481 [main] INFO  liquibase.util - Total change sets:            4
+2025-08-11 13:29:05.484 [main] INFO  liquibase.util - Update summary generated
+2025-08-11 13:29:05.487 [main] INFO  liquibase.command - Command execution complete
+2025-08-11 13:29:06.950 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-11 13:29:07.193 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-08-11 13:29:07.328 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-08-11 13:29:08.317 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-11 13:29:08.649 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-11 13:29:10.614 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-11 13:29:10.736 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 13:29:12.279 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-11 13:29:12.344 [main] INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-08-11 13:29:13.268 [main] INFO  org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-08-11 13:29:13.720 [main] INFO  org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-08-11 13:29:14.209 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2025-08-11 13:29:14.263 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-08-11 13:29:14.285 [main] INFO  com.example.studentsbot.Main - Started Main in 19.385 seconds (process running for 22.537)
+2025-08-11 13:29:23.979 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Message from 7201674426: /start
+2025-08-11 13:29:24.798 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - ЗапустилTsehSerg7201674426
+2025-08-11 13:29:26.710 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Message from 7201674426: null
+2025-08-11 13:29:26.742 [korzhovvbot Telegram Executor] INFO  com.example.studentsbot.db.UserVerification - Checking access: chatId=7201674426, normalizedPhone=79312610989
+2025-08-11 13:29:26.785 [korzhovvbot Telegram Executor] INFO  com.example.studentsbot.db.UserVerification - Result: true
+2025-08-11 13:29:26.788 [korzhovvbot Telegram Executor] INFO  AUTH_LOGGER - +79312610989
+2025-08-11 13:29:28.196 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Message from 7201674426: 📊 КИП
+2025-08-11 14:41:50.016 [SpringApplicationShutdownHook] INFO  org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-11 14:41:50.046 [tomcat-shutdown] INFO  org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-08-11 14:41:50.064 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 14:41:50.081 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-08-11 14:41:50.090 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-08-11 14:42:03.811 [main] INFO  com.example.studentsbot.Main - Starting Main using Java 23.0.2 with PID 17136 (C:\Users\Serge\Documents\Bot\Новая папка\stud_tg_tests\StudentsBot\StudentsBot\target\classes started by Serge in C:\Users\Serge\Documents\Bot\Новая папка\stud_tg_tests)
+2025-08-11 14:42:03.835 [main] DEBUG com.example.studentsbot.Main - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-08-11 14:42:03.839 [main] INFO  com.example.studentsbot.Main - No active profile set, falling back to 1 default profile: "default"
+2025-08-11 14:42:06.473 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11 14:42:06.655 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 156 ms. Found 2 JPA repository interfaces.
+2025-08-11 14:42:08.344 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-08-11 14:42:08.385 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2025-08-11 14:42:08.388 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-11 14:42:08.389 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-08-11 14:42:08.578 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-11 14:42:08.584 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4450 ms
+2025-08-11 14:42:09.126 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-11 14:42:09.653 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@362a561e
+2025-08-11 14:42:09.656 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-11 14:42:10.090 [main] INFO  liquibase.database - Set default schema name to public
+2025-08-11 14:42:11.459 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-08-11 14:42:11.713 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2025-08-11 14:42:11.730 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-08-11 14:42:11.766 [main] INFO  liquibase.util - UPDATE SUMMARY
+2025-08-11 14:42:11.767 [main] INFO  liquibase.util - Run:                          0
+2025-08-11 14:42:11.767 [main] INFO  liquibase.util - Previously run:               4
+2025-08-11 14:42:11.768 [main] INFO  liquibase.util - Filtered out:                 0
+2025-08-11 14:42:11.768 [main] INFO  liquibase.util - -------------------------------
+2025-08-11 14:42:11.769 [main] INFO  liquibase.util - Total change sets:            4
+2025-08-11 14:42:11.771 [main] INFO  liquibase.util - Update summary generated
+2025-08-11 14:42:11.773 [main] INFO  liquibase.command - Command execution complete
+2025-08-11 14:42:13.069 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-11 14:42:13.228 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-08-11 14:42:13.359 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-08-11 14:42:14.134 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-11 14:42:14.459 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-11 14:42:16.211 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-11 14:42:16.329 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 14:42:17.777 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-11 14:42:17.842 [main] INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-08-11 14:42:18.538 [main] INFO  org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-08-11 14:42:18.935 [main] INFO  org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-08-11 14:42:19.382 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2025-08-11 14:42:19.427 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-08-11 14:42:19.448 [main] INFO  com.example.studentsbot.Main - Started Main in 16.872 seconds (process running for 19.542)
+2025-08-11 14:42:40.883 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Message from 7201674426: /start
+2025-08-11 14:42:41.622 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - ЗапустилTsehSerg7201674426
+2025-08-11 14:42:45.651 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Message from 7201674426: null
+2025-08-11 14:42:45.692 [korzhovvbot Telegram Executor] INFO  com.example.studentsbot.db.UserVerification - Checking access: chatId=7201674426, normalizedPhone=79312610989
+2025-08-11 14:42:45.723 [korzhovvbot Telegram Executor] INFO  com.example.studentsbot.db.UserVerification - Result: true
+2025-08-11 14:42:45.723 [korzhovvbot Telegram Executor] INFO  AUTH_LOGGER - +79312610989
+2025-08-11 14:42:46.100 [korzhovvbot Telegram Executor] ERROR com.example.studentsbot.StudentsBot - Ошибка при отправке кнопки КИП: Error executing org.telegram.telegrambots.meta.api.methods.send.SendMessage query: [400] Bad Request: can't parse inline keyboard button: Text buttons are unallowed in the inline keyboard
+2025-08-11 16:02:37.718 [SpringApplicationShutdownHook] INFO  org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-11 16:02:37.744 [tomcat-shutdown] INFO  org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-08-11 16:02:37.780 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 16:02:37.827 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-08-11 16:02:37.848 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-08-11 16:02:50.975 [main] INFO  com.example.studentsbot.Main - Starting Main using Java 23.0.2 with PID 10136 (C:\Users\Serge\Documents\Bot\Новая папка\stud_tg_tests\StudentsBot\StudentsBot\target\classes started by Serge in C:\Users\Serge\Documents\Bot\Новая папка\stud_tg_tests)
+2025-08-11 16:02:50.999 [main] DEBUG com.example.studentsbot.Main - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-08-11 16:02:51.004 [main] INFO  com.example.studentsbot.Main - No active profile set, falling back to 1 default profile: "default"
+2025-08-11 16:02:53.597 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11 16:02:53.775 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 137 ms. Found 2 JPA repository interfaces.
+2025-08-11 16:02:55.419 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-08-11 16:02:55.472 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2025-08-11 16:02:55.477 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-11 16:02:55.479 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-08-11 16:02:55.772 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-11 16:02:55.776 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4523 ms
+2025-08-11 16:02:56.310 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-11 16:02:56.865 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@ad0bb4e
+2025-08-11 16:02:56.870 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-11 16:02:57.317 [main] INFO  liquibase.database - Set default schema name to public
+2025-08-11 16:02:58.713 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-08-11 16:02:58.954 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2025-08-11 16:02:58.968 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-08-11 16:02:59.005 [main] INFO  liquibase.util - UPDATE SUMMARY
+2025-08-11 16:02:59.005 [main] INFO  liquibase.util - Run:                          0
+2025-08-11 16:02:59.006 [main] INFO  liquibase.util - Previously run:               4
+2025-08-11 16:02:59.006 [main] INFO  liquibase.util - Filtered out:                 0
+2025-08-11 16:02:59.007 [main] INFO  liquibase.util - -------------------------------
+2025-08-11 16:02:59.007 [main] INFO  liquibase.util - Total change sets:            4
+2025-08-11 16:02:59.011 [main] INFO  liquibase.util - Update summary generated
+2025-08-11 16:02:59.016 [main] INFO  liquibase.command - Command execution complete
+2025-08-11 16:03:00.243 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-11 16:03:00.406 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-08-11 16:03:00.520 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-08-11 16:03:01.319 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-11 16:03:01.573 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-11 16:03:03.268 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-11 16:03:03.381 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 16:03:05.072 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-11 16:03:05.138 [main] INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-08-11 16:03:05.914 [main] INFO  org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-08-11 16:03:06.287 [main] INFO  org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-08-11 16:03:06.873 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2025-08-11 16:03:06.926 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-08-11 16:03:06.949 [main] INFO  com.example.studentsbot.Main - Started Main in 17.226 seconds (process running for 19.893)
+2025-08-11 16:03:34.486 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Message from 7201674426: /start
+2025-08-11 16:03:35.234 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - ЗапустилTsehSerg7201674426
+2025-08-11 16:03:37.708 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Message from 7201674426: null
+2025-08-11 16:03:37.737 [korzhovvbot Telegram Executor] INFO  com.example.studentsbot.db.UserVerification - Checking access: chatId=7201674426, normalizedPhone=79312610989
+2025-08-11 16:03:37.782 [korzhovvbot Telegram Executor] INFO  com.example.studentsbot.db.UserVerification - Result: true
+2025-08-11 16:03:37.783 [korzhovvbot Telegram Executor] INFO  AUTH_LOGGER - +79312610989
+2025-08-11 16:03:38.091 [korzhovvbot Telegram Executor] ERROR com.example.studentsbot.StudentsBot - Ошибка при отправке кнопки меню: Error executing org.telegram.telegrambots.meta.api.methods.send.SendMessage query: [400] Bad Request: can't parse inline keyboard button: Text buttons are unallowed in the inline keyboard
+2025-08-11 16:04:31.289 [SpringApplicationShutdownHook] INFO  org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-11 16:04:31.318 [tomcat-shutdown] INFO  org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-08-11 16:04:31.325 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 16:04:31.329 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-08-11 16:04:31.335 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-08-11 16:04:43.618 [main] INFO  com.example.studentsbot.Main - Starting Main using Java 23.0.2 with PID 18148 (C:\Users\Serge\Documents\Bot\Новая папка\stud_tg_tests\StudentsBot\StudentsBot\target\classes started by Serge in C:\Users\Serge\Documents\Bot\Новая папка\stud_tg_tests)
+2025-08-11 16:04:43.647 [main] DEBUG com.example.studentsbot.Main - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-08-11 16:04:43.663 [main] INFO  com.example.studentsbot.Main - No active profile set, falling back to 1 default profile: "default"
+2025-08-11 16:04:46.404 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11 16:04:46.586 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 157 ms. Found 2 JPA repository interfaces.
+2025-08-11 16:04:48.186 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-08-11 16:04:48.226 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2025-08-11 16:04:48.232 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-11 16:04:48.233 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-08-11 16:04:48.496 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-11 16:04:48.501 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4372 ms
+2025-08-11 16:04:49.048 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-11 16:04:49.685 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5cf0673d
+2025-08-11 16:04:49.688 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-11 16:04:50.180 [main] INFO  liquibase.database - Set default schema name to public
+2025-08-11 16:04:51.582 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-08-11 16:04:51.898 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2025-08-11 16:04:51.916 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-08-11 16:04:51.952 [main] INFO  liquibase.util - UPDATE SUMMARY
+2025-08-11 16:04:51.952 [main] INFO  liquibase.util - Run:                          0
+2025-08-11 16:04:51.953 [main] INFO  liquibase.util - Previously run:               4
+2025-08-11 16:04:51.953 [main] INFO  liquibase.util - Filtered out:                 0
+2025-08-11 16:04:51.954 [main] INFO  liquibase.util - -------------------------------
+2025-08-11 16:04:51.954 [main] INFO  liquibase.util - Total change sets:            4
+2025-08-11 16:04:51.956 [main] INFO  liquibase.util - Update summary generated
+2025-08-11 16:04:51.959 [main] INFO  liquibase.command - Command execution complete
+2025-08-11 16:04:53.291 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-11 16:04:53.454 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-08-11 16:04:53.588 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-08-11 16:04:54.607 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-11 16:04:54.951 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-11 16:04:57.087 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-11 16:04:57.197 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 16:04:58.882 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-11 16:04:58.950 [main] INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-08-11 16:04:59.685 [main] INFO  org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-08-11 16:05:00.226 [main] INFO  org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-08-11 16:05:00.748 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2025-08-11 16:05:00.801 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-08-11 16:05:00.824 [main] INFO  com.example.studentsbot.Main - Started Main in 18.467 seconds (process running for 21.035)
+2025-08-11 16:05:09.024 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Message from 7201674426: /start
+2025-08-11 16:05:09.814 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - ЗапустилTsehSerg7201674426
+2025-08-11 16:05:12.806 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Message from 7201674426: null
+2025-08-11 16:05:12.856 [korzhovvbot Telegram Executor] INFO  com.example.studentsbot.db.UserVerification - Checking access: chatId=7201674426, normalizedPhone=79312610989
+2025-08-11 16:05:12.896 [korzhovvbot Telegram Executor] INFO  com.example.studentsbot.db.UserVerification - Result: true
+2025-08-11 16:05:12.897 [korzhovvbot Telegram Executor] INFO  AUTH_LOGGER - +79312610989
+2025-08-11 16:08:28.412 [SpringApplicationShutdownHook] INFO  org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-11 16:08:28.444 [tomcat-shutdown] INFO  org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-08-11 16:08:28.451 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 16:08:28.455 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-08-11 16:08:28.464 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-08-11 16:08:40.532 [main] INFO  com.example.studentsbot.Main - Starting Main using Java 23.0.2 with PID 2032 (C:\Users\Serge\Documents\Bot\Новая папка\stud_tg_tests\StudentsBot\StudentsBot\target\classes started by Serge in C:\Users\Serge\Documents\Bot\Новая папка\stud_tg_tests)
+2025-08-11 16:08:40.571 [main] DEBUG com.example.studentsbot.Main - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-08-11 16:08:40.578 [main] INFO  com.example.studentsbot.Main - No active profile set, falling back to 1 default profile: "default"
+2025-08-11 16:08:43.114 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11 16:08:43.278 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 139 ms. Found 2 JPA repository interfaces.
+2025-08-11 16:08:44.985 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-08-11 16:08:45.026 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2025-08-11 16:08:45.032 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-11 16:08:45.033 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-08-11 16:08:45.272 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-11 16:08:45.276 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4497 ms
+2025-08-11 16:08:45.853 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-11 16:08:46.371 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@362a561e
+2025-08-11 16:08:46.374 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-11 16:08:46.871 [main] INFO  liquibase.database - Set default schema name to public
+2025-08-11 16:08:48.141 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-08-11 16:08:48.429 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2025-08-11 16:08:48.447 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-08-11 16:08:48.481 [main] INFO  liquibase.util - UPDATE SUMMARY
+2025-08-11 16:08:48.482 [main] INFO  liquibase.util - Run:                          0
+2025-08-11 16:08:48.482 [main] INFO  liquibase.util - Previously run:               4
+2025-08-11 16:08:48.482 [main] INFO  liquibase.util - Filtered out:                 0
+2025-08-11 16:08:48.483 [main] INFO  liquibase.util - -------------------------------
+2025-08-11 16:08:48.483 [main] INFO  liquibase.util - Total change sets:            4
+2025-08-11 16:08:48.485 [main] INFO  liquibase.util - Update summary generated
+2025-08-11 16:08:48.488 [main] INFO  liquibase.command - Command execution complete
+2025-08-11 16:08:49.759 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-11 16:08:49.960 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-08-11 16:08:50.073 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-08-11 16:08:50.942 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-11 16:08:51.243 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-11 16:08:53.383 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-11 16:08:53.502 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 16:08:55.208 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-11 16:08:55.286 [main] INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-08-11 16:08:56.208 [main] INFO  org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-08-11 16:08:56.676 [main] INFO  org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-08-11 16:08:57.197 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2025-08-11 16:08:57.251 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-08-11 16:08:57.281 [main] INFO  com.example.studentsbot.Main - Started Main in 18.034 seconds (process running for 20.689)
+2025-08-11 16:09:06.498 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Message from 7201674426: /start
+2025-08-11 16:09:07.464 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - ЗапустилTsehSerg7201674426
+2025-08-11 16:09:10.031 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Message from 7201674426: null
+2025-08-11 16:09:10.070 [korzhovvbot Telegram Executor] INFO  com.example.studentsbot.db.UserVerification - Checking access: chatId=7201674426, normalizedPhone=79312610989
+2025-08-11 16:09:10.109 [korzhovvbot Telegram Executor] INFO  com.example.studentsbot.db.UserVerification - Result: true
+2025-08-11 16:09:10.110 [korzhovvbot Telegram Executor] INFO  AUTH_LOGGER - +79312610989
+2025-08-11 16:09:10.402 [korzhovvbot Telegram Executor] ERROR com.example.studentsbot.StudentsBot - Ошибка при отправке кнопки меню: Error executing org.telegram.telegrambots.meta.api.methods.send.SendMessage query: [400] Bad Request: can't parse inline keyboard button: Text buttons are unallowed in the inline keyboard
+2025-08-11 16:17:00.082 [SpringApplicationShutdownHook] INFO  org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-11 16:17:00.107 [tomcat-shutdown] INFO  org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-08-11 16:17:00.115 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 16:17:00.118 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-08-11 16:17:00.124 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-08-11 16:17:12.728 [main] INFO  com.example.studentsbot.Main - Starting Main using Java 23.0.2 with PID 3000 (C:\Users\Serge\Documents\Bot\Новая папка\stud_tg_tests\StudentsBot\StudentsBot\target\classes started by Serge in C:\Users\Serge\Documents\Bot\Новая папка\stud_tg_tests)
+2025-08-11 16:17:12.752 [main] DEBUG com.example.studentsbot.Main - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-08-11 16:17:12.756 [main] INFO  com.example.studentsbot.Main - No active profile set, falling back to 1 default profile: "default"
+2025-08-11 16:17:15.579 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11 16:17:15.814 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 181 ms. Found 2 JPA repository interfaces.
+2025-08-11 16:17:17.406 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-08-11 16:17:17.450 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2025-08-11 16:17:17.454 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-11 16:17:17.455 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-08-11 16:17:17.694 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-11 16:17:17.699 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4689 ms
+2025-08-11 16:17:18.224 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-11 16:17:19.061 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1a785fd5
+2025-08-11 16:17:19.064 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-11 16:17:19.568 [main] INFO  liquibase.database - Set default schema name to public
+2025-08-11 16:17:21.168 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-08-11 16:17:21.456 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2025-08-11 16:17:21.478 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-08-11 16:17:21.542 [main] INFO  liquibase.util - UPDATE SUMMARY
+2025-08-11 16:17:21.543 [main] INFO  liquibase.util - Run:                          0
+2025-08-11 16:17:21.543 [main] INFO  liquibase.util - Previously run:               4
+2025-08-11 16:17:21.544 [main] INFO  liquibase.util - Filtered out:                 0
+2025-08-11 16:17:21.545 [main] INFO  liquibase.util - -------------------------------
+2025-08-11 16:17:21.546 [main] INFO  liquibase.util - Total change sets:            4
+2025-08-11 16:17:21.549 [main] INFO  liquibase.util - Update summary generated
+2025-08-11 16:17:21.553 [main] INFO  liquibase.command - Command execution complete
+2025-08-11 16:17:22.787 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-11 16:17:22.969 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-08-11 16:17:23.073 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-08-11 16:17:23.903 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-11 16:17:24.167 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-11 16:17:25.939 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-11 16:17:26.069 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 16:17:27.523 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-11 16:17:27.630 [main] INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-08-11 16:17:28.363 [main] INFO  org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-08-11 16:17:28.776 [main] INFO  org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-08-11 16:17:29.422 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2025-08-11 16:17:29.469 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-08-11 16:17:29.492 [main] INFO  com.example.studentsbot.Main - Started Main in 18.055 seconds (process running for 20.739)
+2025-08-11 16:17:39.230 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Message from 7201674426: /start
+2025-08-11 16:17:40.269 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - ЗапустилTsehSerg7201674426
+2025-08-11 16:17:42.250 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Message from 7201674426: null
+2025-08-11 16:17:42.299 [korzhovvbot Telegram Executor] INFO  com.example.studentsbot.db.UserVerification - Checking access: chatId=7201674426, normalizedPhone=79312610989
+2025-08-11 16:17:42.340 [korzhovvbot Telegram Executor] INFO  com.example.studentsbot.db.UserVerification - Result: true
+2025-08-11 16:17:42.341 [korzhovvbot Telegram Executor] INFO  AUTH_LOGGER - +79312610989
+2025-08-11 16:17:44.772 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Message from 7201674426: КИП
+2025-08-11 16:17:44.858 [korzhovvbot Telegram Executor] ERROR com.example.studentsbot.StudentsBot - Ошибка при отправке ссылки КИП: Error executing org.telegram.telegrambots.meta.api.methods.send.SendMessage query: [400] Bad Request: can't parse inline keyboard button: Text buttons are unallowed in the inline keyboard
+2025-08-11 16:17:51.064 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Message from 7201674426: КИП
+2025-08-11 16:17:51.154 [korzhovvbot Telegram Executor] ERROR com.example.studentsbot.StudentsBot - Ошибка при отправке ссылки КИП: Error executing org.telegram.telegrambots.meta.api.methods.send.SendMessage query: [400] Bad Request: can't parse inline keyboard button: Text buttons are unallowed in the inline keyboard
+2025-08-11 16:20:21.198 [SpringApplicationShutdownHook] INFO  org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-11 16:20:21.223 [tomcat-shutdown] INFO  org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-08-11 16:20:21.235 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 16:20:21.238 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-08-11 16:20:21.250 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-08-11 16:20:34.069 [main] INFO  com.example.studentsbot.Main - Starting Main using Java 23.0.2 with PID 10428 (C:\Users\Serge\Documents\Bot\Новая папка\stud_tg_tests\StudentsBot\StudentsBot\target\classes started by Serge in C:\Users\Serge\Documents\Bot\Новая папка\stud_tg_tests)
+2025-08-11 16:20:34.092 [main] DEBUG com.example.studentsbot.Main - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-08-11 16:20:34.098 [main] INFO  com.example.studentsbot.Main - No active profile set, falling back to 1 default profile: "default"
+2025-08-11 16:20:36.697 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11 16:20:36.853 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 137 ms. Found 2 JPA repository interfaces.
+2025-08-11 16:20:38.448 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-08-11 16:20:38.490 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2025-08-11 16:20:38.495 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-11 16:20:38.496 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-08-11 16:20:38.763 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-11 16:20:38.766 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4435 ms
+2025-08-11 16:20:39.312 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-11 16:20:39.882 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5599b5bb
+2025-08-11 16:20:39.885 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-11 16:20:40.365 [main] INFO  liquibase.database - Set default schema name to public
+2025-08-11 16:20:41.935 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-08-11 16:20:42.175 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2025-08-11 16:20:42.195 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-08-11 16:20:42.230 [main] INFO  liquibase.util - UPDATE SUMMARY
+2025-08-11 16:20:42.230 [main] INFO  liquibase.util - Run:                          0
+2025-08-11 16:20:42.231 [main] INFO  liquibase.util - Previously run:               4
+2025-08-11 16:20:42.231 [main] INFO  liquibase.util - Filtered out:                 0
+2025-08-11 16:20:42.232 [main] INFO  liquibase.util - -------------------------------
+2025-08-11 16:20:42.232 [main] INFO  liquibase.util - Total change sets:            4
+2025-08-11 16:20:42.235 [main] INFO  liquibase.util - Update summary generated
+2025-08-11 16:20:42.238 [main] INFO  liquibase.command - Command execution complete
+2025-08-11 16:20:43.393 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-11 16:20:43.539 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-08-11 16:20:43.685 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-08-11 16:20:44.544 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-11 16:20:44.864 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-11 16:20:46.607 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-11 16:20:46.718 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 16:20:48.287 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-11 16:20:48.353 [main] INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-08-11 16:20:49.115 [main] INFO  org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-08-11 16:20:49.531 [main] INFO  org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-08-11 16:20:50.120 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2025-08-11 16:20:50.166 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-08-11 16:20:50.189 [main] INFO  com.example.studentsbot.Main - Started Main in 17.415 seconds (process running for 20.206)
+2025-08-11 16:20:56.788 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Message from 7201674426: /start
+2025-08-11 16:20:57.538 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - ЗапустилTsehSerg7201674426
+2025-08-11 16:20:59.680 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Message from 7201674426: null
+2025-08-11 16:20:59.880 [korzhovvbot Telegram Executor] INFO  com.example.studentsbot.db.UserVerification - Checking access: chatId=7201674426, normalizedPhone=79312610989
+2025-08-11 16:20:59.927 [korzhovvbot Telegram Executor] INFO  com.example.studentsbot.db.UserVerification - Result: true
+2025-08-11 16:20:59.928 [korzhovvbot Telegram Executor] INFO  AUTH_LOGGER - +79312610989
+2025-08-11 16:21:06.005 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Message from 7201674426: КИП
+2025-08-11 16:21:06.043 [korzhovvbot Telegram Executor] ERROR com.example.studentsbot.StudentsBot - KIP URL не задан в настройках!
+2025-08-11 16:24:12.667 [SpringApplicationShutdownHook] INFO  org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-11 16:24:12.708 [tomcat-shutdown] INFO  org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-08-11 16:24:12.724 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 16:24:12.730 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-08-11 16:24:12.739 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-08-11 16:24:18.494 [main] INFO  com.example.studentsbot.Main - Starting Main using Java 23.0.2 with PID 3852 (C:\Users\Serge\Documents\Bot\Новая папка\stud_tg_tests\StudentsBot\StudentsBot\target\classes started by Serge in C:\Users\Serge\Documents\Bot\Новая папка\stud_tg_tests)
+2025-08-11 16:24:18.528 [main] DEBUG com.example.studentsbot.Main - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-08-11 16:24:18.532 [main] INFO  com.example.studentsbot.Main - No active profile set, falling back to 1 default profile: "default"
+2025-08-11 16:24:21.080 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11 16:24:21.260 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 154 ms. Found 2 JPA repository interfaces.
+2025-08-11 16:24:23.008 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-08-11 16:24:23.065 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2025-08-11 16:24:23.077 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-11 16:24:23.078 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-08-11 16:24:23.345 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-11 16:24:23.352 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4584 ms
+2025-08-11 16:24:23.945 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-11 16:24:24.512 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@44aa91e2
+2025-08-11 16:24:24.515 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-11 16:24:24.959 [main] INFO  liquibase.database - Set default schema name to public
+2025-08-11 16:24:26.262 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-08-11 16:24:26.527 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2025-08-11 16:24:26.550 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-08-11 16:24:26.596 [main] INFO  liquibase.util - UPDATE SUMMARY
+2025-08-11 16:24:26.596 [main] INFO  liquibase.util - Run:                          0
+2025-08-11 16:24:26.600 [main] INFO  liquibase.util - Previously run:               4
+2025-08-11 16:24:26.602 [main] INFO  liquibase.util - Filtered out:                 0
+2025-08-11 16:24:26.603 [main] INFO  liquibase.util - -------------------------------
+2025-08-11 16:24:26.605 [main] INFO  liquibase.util - Total change sets:            4
+2025-08-11 16:24:26.609 [main] INFO  liquibase.util - Update summary generated
+2025-08-11 16:24:26.614 [main] INFO  liquibase.command - Command execution complete
+2025-08-11 16:24:28.019 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-11 16:24:28.218 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-08-11 16:24:28.364 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-08-11 16:24:29.313 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-11 16:24:29.674 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-11 16:24:31.863 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-11 16:24:32.012 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 16:24:34.000 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-11 16:24:34.157 [main] INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-08-11 16:24:35.046 [main] INFO  org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-08-11 16:24:35.628 [main] INFO  org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-08-11 16:24:37.168 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2025-08-11 16:24:37.234 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-08-11 16:24:37.259 [main] INFO  com.example.studentsbot.Main - Started Main in 20.008 seconds (process running for 22.586)
+2025-08-11 16:24:48.203 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Message from 7201674426: /start
+2025-08-11 16:24:48.924 [korzhovvbot Telegram Executor] INFO  USER_ACTIONS - ЗапустилTsehSerg7201674426
+2025-08-11 16:24:51.242 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Message from 7201674426: null
+2025-08-11 16:24:51.277 [korzhovvbot Telegram Executor] INFO  com.example.studentsbot.db.UserVerification - Checking access: chatId=7201674426, normalizedPhone=79312610989
+2025-08-11 16:24:51.308 [korzhovvbot Telegram Executor] INFO  com.example.studentsbot.db.UserVerification - Result: true
+2025-08-11 16:24:51.308 [korzhovvbot Telegram Executor] INFO  AUTH_LOGGER - +79312610989
+2025-08-11 16:24:52.812 [korzhovvbot Telegram Executor] DEBUG com.example.studentsbot.StudentsBot - Message from 7201674426: КИП
+2025-08-11 16:24:52.874 [korzhovvbot Telegram Executor] INFO  com.example.studentsbot.StudentsBot - KIP URL: https://drive.google.com/drive/folders/1nfZR2sbE6aW0dMNOo6iTPbMPOtBZvkQx
+2025-08-11 16:25:13.961 [http-nio-0.0.0.0-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-11 16:25:13.961 [http-nio-0.0.0.0-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-08-11 16:25:13.963 [http-nio-0.0.0.0-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-08-11 16:25:17.151 [http-nio-0.0.0.0-8080-exec-2] INFO  com.example.studentsbot.services.UserCRUDServices - Create
+2025-08-11 16:25:17.328 [http-nio-0.0.0.0-8080-exec-3] INFO  com.example.studentsbot.services.UserCRUDServices - Get All
+2025-08-11 22:11:27.663 [SpringApplicationShutdownHook] INFO  org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-11 22:11:27.681 [tomcat-shutdown] INFO  org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-08-11 22:11:27.690 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11 22:11:27.696 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-08-11 22:11:27.703 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

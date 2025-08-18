@@ -28,6 +28,7 @@ public class TelegramBotProperties {
         private String token;
         private String username;
         private Long adminId;
+        private String kipUrl;
 
         public String getToken() {
             return token;
@@ -40,6 +41,9 @@ public class TelegramBotProperties {
         public Long getAdminId() {
             return adminId;
         }
+
+        public String getKipUrl() {return  kipUrl;}
+
     }
 
     @Getter
